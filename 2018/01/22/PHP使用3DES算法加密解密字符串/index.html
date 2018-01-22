@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP使用3DES算法加密解密字符串 | Yang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。它相当于是对每个数据块应用三次DES加密算法。由于计算机运算能力的增强，原版DES密码的密钥长度变得容易被暴力破解；3DES即是设计用来提供一种相对简单的方法，即通过增加D">
+<meta name="keywords" content="3DES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP使用3DES算法加密解密字符串">
+<meta property="og:url" content="https://xhyangdali.github.io/2018/01/22/PHP使用3DES算法加密解密字符串/index.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。它相当于是对每个数据块应用三次DES加密算法。由于计算机运算能力的增强，原版DES密码的密钥长度变得容易被暴力破解；3DES即是设计用来提供一种相对简单的方法，即通过增加DES的密钥长度来避免类似的攻击，而不是设计一种全新的块密码算法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-22T05:38:03.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP使用3DES算法加密解密字符串">
+<meta name="twitter:description" content="3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。它相当于是对每个数据块应用三次DES加密算法。由于计算机运算能力的增强，原版DES密码的密钥长度变得容易被暴力破解；3DES即是设计用来提供一种相对简单的方法，即通过增加DES的密钥长度来避免类似的攻击，而不是设计一种全新的块密码算法。">
+  
+    <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">莫等闲</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">生活不苟且</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                            <li><a href="/tags">我的标签</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/xhyangdali" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/3DES/" style="font-size: 10px;">3DES</a> <a href="/tags/Articles/" style="font-size: 10px;">Articles</a> <a href="/tags/H5-WeiXin/" style="font-size: 10px;">H5 WeiXin</a> <a href="/tags/HEXO-IMAGE/" style="font-size: 10px;">HEXO IMAGE</a> <a href="/tags/Jsonp-Ajax/" style="font-size: 10px;">Jsonp Ajax</a> <a href="/tags/LIFE-Future-Articles/" style="font-size: 10px;">LIFE Future Articles</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/OpenStack-Cloud/" style="font-size: 10px;">OpenStack Cloud</a> <a href="/tags/PhpQRCode/" style="font-size: 10px;">PhpQRCode</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://xhyangdali.github.io/">莫等闲</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">IT人、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">莫等闲</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">莫等闲</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生活不苟且</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                    <li><a href="/tags">我的标签</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/xhyangdali" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-PHP使用3DES算法加密解密字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/22/PHP使用3DES算法加密解密字符串/" class="article-date">
+      <time datetime="2018-01-22T05:22:14.000Z" itemprop="datePublished">2018-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP使用3DES算法加密解密字符串
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3DES/">3DES</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>3DES（或称为Triple DES）是三重数据加密算法（TDEA，Triple Data Encryption Algorithm）块密码的通称。<br>它相当于是对每个数据块应用三次DES加密算法。<br>由于计算机运算能力的增强，原版DES密码的密钥长度变得容易被暴力破解；3DES即是设计用来提供一种相对简单的方法，即通过增加DES的密钥长度来避免类似的攻击，而不是设计一种全新的块密码算法。<br><a id="more"></a></p>
+<h2 id="为什么要进行数据加密"><a href="#为什么要进行数据加密" class="headerlink" title="为什么要进行数据加密"></a>为什么要进行数据加密</h2><p>数据的安全性越来越得以重视。举个例子说，保存在数据库中的用户密码并不是明文保存的，而是采用md5加密后存储，这样即使数据库被脱库，仍能保证用户密码安全。<br>但是，md5是不可逆的，开发人员根本就不知道用户的密码到底是什么。<br>有些时候，我们希望加密后存储的数据是可逆的，比如一些接口密钥，这样即使数据库被脱库，如果没有对应的解密方式，攻击者盗取的密钥也是不能使用的。</p>
+<h2 id="3DES加密简介"><a href="#3DES加密简介" class="headerlink" title="3DES加密简介"></a>3DES加密简介</h2><p>3DES（即Triple DES）是DES向AES过渡的加密算法（1999年，NIST将3-DES指定为过渡的加密标准），加密算法，<br>其具体实现如下：设Ek()和Dk()代表DES算法的加密和解密过程，K代表DES算法使用的密钥，M代表明文，C代表密文，这样：</p>
+<p>3DES加密过程为：C=Ek3(Dk2(Ek1(M)))</p>
+<p>3DES解密过程为：M=Dk1(EK2(Dk3(C)))</p>
+<h2 id="使用PHP实现3DES加密"><a href="#使用PHP实现3DES加密" class="headerlink" title="使用PHP实现3DES加密"></a>使用PHP实现3DES加密</h2><h3 id="使用PHP实现3DES流程图"><a href="#使用PHP实现3DES流程图" class="headerlink" title="使用PHP实现3DES流程图"></a>使用PHP实现3DES流程图</h3><p>-&gt;Start<br>-&gt;mcrypt_module_open 打开算法和模式对应的模块<br>-&gt;mcrypt_generic_init 初始化加密所需的缓冲区<br>-&gt;mcrypt_generic 加密数据<br>-&gt;mcrypt_generic_deinit 对加密模块进行清理工作<br>-&gt;mcrypt_module_close 关闭加密模块</p>
+<p>要使用以上的函数，在编译PHP的时候必须添加–with-mcrypt选项。</p>
+<h3 id="PHP实现3DES代码"><a href="#PHP实现3DES代码" class="headerlink" title="PHP实现3DES代码"></a>PHP实现3DES代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 3DES加解密类</span><br><span class="line"> * @Author: yxh</span><br><span class="line"> * @version: v1.0</span><br><span class="line"> * 2018年1月19日</span><br><span class="line"> */</span><br><span class="line">class Encrypt</span><br><span class="line">&#123;</span><br><span class="line">    //加密秘钥，</span><br><span class="line">    private $_key;</span><br><span class="line">    private $_iv;</span><br><span class="line">    public function __construct($key, $iv)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;_key = $key;</span><br><span class="line">        $this-&gt;_iv = $iv;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 对字符串进行3DES加密</span><br><span class="line">     * @param string 要加密的字符串</span><br><span class="line">     * @return mixed 加密成功返回加密后的字符串，否则返回false</span><br><span class="line">     */</span><br><span class="line">    public function encrypt3DES($str)</span><br><span class="line">    &#123;</span><br><span class="line">        $td = mcrypt_module_open(MCRYPT_3DES, &quot;&quot;, MCRYPT_MODE_CBC, &quot;&quot;);</span><br><span class="line">        if ($td === false) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        //检查加密key，iv的长度是否符合算法要求</span><br><span class="line">        $key = $this-&gt;fixLen($this-&gt;_key, mcrypt_enc_get_key_size($td));</span><br><span class="line">        $iv = $this-&gt;fixLen($this-&gt;_iv, mcrypt_enc_get_iv_size($td));</span><br><span class="line"></span><br><span class="line">        //加密数据长度处理</span><br><span class="line">        $str = $this-&gt;strPad($str, mcrypt_enc_get_block_size($td));</span><br><span class="line"></span><br><span class="line">        if (mcrypt_generic_init($td, $key, $iv) !== 0) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        $result = mcrypt_generic($td, $str);</span><br><span class="line">        mcrypt_generic_deinit($td);</span><br><span class="line">        mcrypt_module_close($td);</span><br><span class="line">        return $result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 对加密的字符串进行3DES解密</span><br><span class="line">     * @param string 要解密的字符串</span><br><span class="line">     * @return mixed 加密成功返回加密后的字符串，否则返回false</span><br><span class="line">     */</span><br><span class="line">    public function decrypt3DES($str)</span><br><span class="line">    &#123;</span><br><span class="line">        $td = mcrypt_module_open(MCRYPT_3DES, &quot;&quot;, MCRYPT_MODE_CBC, &quot;&quot;);</span><br><span class="line">        if ($td === false) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //检查加密key，iv的长度是否符合算法要求</span><br><span class="line">        $key = $this-&gt;fixLen($this-&gt;_key, mcrypt_enc_get_key_size($td));</span><br><span class="line">        $iv = $this-&gt;fixLen($this-&gt;_iv, mcrypt_enc_get_iv_size($td));</span><br><span class="line"></span><br><span class="line">        if (mcrypt_generic_init($td, $key, $iv) !== 0) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        $result = mdecrypt_generic($td, $str);</span><br><span class="line">        mcrypt_generic_deinit($td);</span><br><span class="line">        mcrypt_module_close($td);</span><br><span class="line"></span><br><span class="line">        return $this-&gt;strUnPad($result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 返回适合算法长度的key，iv字符串</span><br><span class="line">     * @param string $str key或iv的值</span><br><span class="line">     * @param int $td_len 符合条件的key或iv长度</span><br><span class="line">     * @return string 返回处理后的key或iv值</span><br><span class="line">     */</span><br><span class="line">    private function fixLen($str, $td_len)</span><br><span class="line">    &#123;</span><br><span class="line">        $str_len = strlen($str);</span><br><span class="line">        if ($str_len &gt; $td_len) &#123;</span><br><span class="line">            return substr($str, 0, $td_len);</span><br><span class="line">        &#125; else if($str_len &lt; $td_len) &#123;</span><br><span class="line">            return str_pad($str, $td_len, &apos;0&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">        return $str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 返回适合算法的分组大小的字符串长度，末尾使用\0补齐</span><br><span class="line">     * @param string $str 要加密的字符串</span><br><span class="line">     * @param int $td_group_len 符合算法的分组长度</span><br><span class="line">     * @return string 返回处理后字符串</span><br><span class="line">     */</span><br><span class="line">    private function strPad($str, $td_group_len)</span><br><span class="line">    &#123;</span><br><span class="line">        $padding_len = $td_group_len - (strlen($str) % $td_group_len);</span><br><span class="line">        return str_pad($str, strlen($str) + $padding_len, &quot;\0&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 返回适合算法的分组大小的字符串长度，末尾使用\0补齐</span><br><span class="line">     * @param string $str 要加密的字符串</span><br><span class="line">     * @return string 返回处理后字符串</span><br><span class="line">     */</span><br><span class="line">    private function strUnPad($str)</span><br><span class="line">    &#123;</span><br><span class="line">        return rtrim($str);</span><br><span class="line">    &#125;</span><br><span class="line">   /**</span><br><span class="line">    * 取消订单（对已锁定的座位解锁）</span><br><span class="line">    */</span><br><span class="line">   public function cancelorder($oid,$fromstationid,$orderid)&#123;</span><br><span class="line">   		$header[] = &apos;appid:&apos; . config(&apos;fjconfig.soapappid&apos;);</span><br><span class="line">		$header[] = &apos;username:&apos; . config(&quot;fjconfig.soapusername&quot;);</span><br><span class="line">		$header[] = &apos;password:&apos; . config(&apos;fjconfig.soappassword&apos;);</span><br><span class="line">		$header[] = &apos;oid:&apos; . $oid;</span><br><span class="line">		$header[] = &apos;fromstationid:&apos; . $fromstationid;</span><br><span class="line">		$header[] = &apos;orderid :&apos; . $orderid;</span><br><span class="line">			</span><br><span class="line">		\think\Log::record ($header, &apos;**************submitdata&apos;);</span><br><span class="line">							</span><br><span class="line">		$return=linkInterface(&quot;applyorder&quot;,$header);</span><br><span class="line">					</span><br><span class="line">		\think\Log::record ($return, &apos;**************cancelorder&apos;);</span><br><span class="line">		</span><br><span class="line">		return $return;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PHP实现3DES加密-解密调用"><a href="#PHP实现3DES加密-解密调用" class="headerlink" title="PHP实现3DES加密-解密调用"></a>PHP实现3DES加密-解密调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> *3DES 加密</span><br><span class="line"> *</span><br><span class="line"> * @param type $str</span><br><span class="line"> *</span><br><span class="line"> * */</span><br><span class="line">function encrypt3DES($str) &#123;</span><br><span class="line">    $key   = config(&quot;Encypt.key&quot;);</span><br><span class="line">    $iv    = config(&quot;Encypt.iv&quot;);</span><br><span class="line">    $des = new Encrypt($key, $iv);</span><br><span class="line">    $e_str = $des-&gt;encrypt3DES($str);</span><br><span class="line">    return urlencode($e_str);</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line"> *3DES 解密</span><br><span class="line"> *</span><br><span class="line"> * @param type $str</span><br><span class="line"> *</span><br><span class="line"> * */</span><br><span class="line">function decrypt3DES($str) &#123;</span><br><span class="line">    $str = urldecode($str);</span><br><span class="line">    $key   = config(&quot;Encypt.key&quot;);</span><br><span class="line">    $iv    = config(&quot;Encypt.iv&quot;);</span><br><span class="line">    $des = new Encrypt($key, $iv);</span><br><span class="line">    $d_str = $des-&gt;decrypt3DES($str);</span><br><span class="line">    return urlencode($d_str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>注意，如果要在数据库中保存加密后的数据，建议base64_encode之后再保存，以下是PHP官网上的建议：<br>如果你在例如 MySQL 这样的数据库中存储数据， 请注意 varchar 类型的字段会在插入数据时自动移除字符串末尾的“空格”。<br>由于加密后的数据可能是以空格（ASCII 32）结尾， 这种特性会导致数据损坏。<br>请使用 tinyblob/tinytext（或 larger）字段来存储加密数据。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>谢谢客官</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/22/PHP使用3DES算法加密解密字符串/">PHP使用3DES算法加密解密字符串</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
+        <p><span>发布时间:</span>2018年01月22日 - 13时22分</p>
+        <p><span>最后更新:</span>2018年01月22日 - 13时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/22/PHP使用3DES算法加密解密字符串/" title="PHP使用3DES算法加密解密字符串">https://xhyangdali.github.io/2018/01/22/PHP使用3DES算法加密解密字符串/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2018/01/22/PHP使用3DES算法加密解密字符串/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/01/22/hexo入门学习文章（带图片）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          hexo入门学习文章（带图片）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/11/使用PHPQRCode生成二维码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用PHPQRCode生成二维码</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要进行数据加密"><span class="toc-number">1.</span> <span class="toc-text">为什么要进行数据加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3DES加密简介"><span class="toc-number">2.</span> <span class="toc-text">3DES加密简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用PHP实现3DES加密"><span class="toc-number">3.</span> <span class="toc-text">使用PHP实现3DES加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用PHP实现3DES流程图"><span class="toc-number">3.1.</span> <span class="toc-text">使用PHP实现3DES流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP实现3DES代码"><span class="toc-number">3.2.</span> <span class="toc-text">PHP实现3DES代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP实现3DES加密-解密调用"><span class="toc-number">3.3.</span> <span class="toc-text">PHP实现3DES加密-解密调用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">4.</span> <span class="toc-text">注意事项</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'yang',
+      repo: 'xhyangdali.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/01/22/hexo入门学习文章（带图片）/" title="上一篇: hexo入门学习文章（带图片）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/01/11/使用PHPQRCode生成二维码/" title="下一篇: 使用PHPQRCode生成二维码">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/hexo入门学习文章（带图片）/">hexo入门学习文章（带图片）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/PHP使用3DES算法加密解密字符串/">PHP使用3DES算法加密解密字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/11/使用PHPQRCode生成二维码/">使用PHPQRCode生成二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/程序员的三十岁/">程序员的三十岁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/25/H5移动端页面常见兼容性问题记录/">H5移动端页面常见兼容性问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/Jsonp-method-not-post/">Ajax提交之后，Method从POST变成GET</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/OpenStack生存情况/">OpenStack生存情况</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-5/">百善孝为先</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/hexo-404-page/">在 Hexo 中创建匹配主题的404页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/2017.12.1/">第一篇博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 莫等闲
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xhyangdali/xhyangdali.github.io" target="_blank">spfk</a> by yang
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >访客: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

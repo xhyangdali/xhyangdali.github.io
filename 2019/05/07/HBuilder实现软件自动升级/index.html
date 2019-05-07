@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Ajax提交之后，Method从POST变成GET | Yang&#39;s Blog</title>
+  <title>HBuilder实现软件自动升级 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ajax提交之后，Method从POST变成GET开发过程中遇到一个小却很困惑的问题：    进行ajax请求时，用的是post但是系统会自动给转成get,一直不明白。现在找到原因了。">
-<meta name="keywords" content="Jsonp Ajax">
+  <meta name="description" content="移动APP开发好后需要实现软件自动升级功能，发现HBuilder具有“App资源在线升级更新”的功能，遂研究之。经过一番测试，在源码思想的基础之上对其进行了优化。">
+<meta name="keywords" content="H5 H5+app">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax提交之后，Method从POST变成GET">
-<meta property="og:url" content="https://xhyangdali.github.io/2017/12/12/Jsonp-method-not-post/index.html">
+<meta property="og:title" content="HBuilder实现软件自动升级">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/07/HBuilder实现软件自动升级/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="Ajax提交之后，Method从POST变成GET开发过程中遇到一个小却很困惑的问题：    进行ajax请求时，用的是post但是系统会自动给转成get,一直不明白。现在找到原因了。">
+<meta property="og:description" content="移动APP开发好后需要实现软件自动升级功能，发现HBuilder具有“App资源在线升级更新”的功能，遂研究之。经过一番测试，在源码思想的基础之上对其进行了优化。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-12T04:58:17.913Z">
+<meta property="og:updated_time" content="2019-05-07T03:41:22.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax提交之后，Method从POST变成GET">
-<meta name="twitter:description" content="Ajax提交之后，Method从POST变成GET开发过程中遇到一个小却很困惑的问题：    进行ajax请求时，用的是post但是系统会自动给转成get,一直不明白。现在找到原因了。">
+<meta name="twitter:title" content="HBuilder实现软件自动升级">
+<meta name="twitter:description" content="移动APP开发好后需要实现软件自动升级功能，发现HBuilder具有“App资源在线升级更新”的功能，遂研究之。经过一番测试，在源码思想的基础之上对其进行了优化。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Jsonp-method-not-post" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HBuilder实现软件自动升级" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/12/Jsonp-method-not-post/" class="article-date">
-      <time datetime="2017-12-12T04:52:22.000Z" itemprop="datePublished">2017-12-12</time>
+      <a href="/2019/05/07/HBuilder实现软件自动升级/" class="article-date">
+      <time datetime="2019-05-07T03:36:44.000Z" itemprop="datePublished">2019-05-07</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ajax提交之后，Method从POST变成GET
+      HBuilder实现软件自动升级
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/AJAX/">AJAX</a>
+    <a class="article-category-link" href="/categories/Hbuilder/">Hbuilder</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jsonp-Ajax/">Jsonp Ajax</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5-H5-app/">H5 H5+app</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,12 +276,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Ajax提交之后，Method从POST变成GET"><a href="#Ajax提交之后，Method从POST变成GET" class="headerlink" title="Ajax提交之后，Method从POST变成GET"></a>Ajax提交之后，Method从POST变成GET</h2><p>开发过程中遇到一个小却很困惑的问题：<br>    进行ajax请求时，用的是post但是系统会自动给转成get,一直不明白。现在找到原因了。<br><a id="more"></a></p>
-<h2 id="原因如下"><a href="#原因如下" class="headerlink" title="原因如下"></a>原因如下</h2><hr>
-<pre><code>因为你的 dataType 是 jsonp 而不是 json 
-jsonp不支持POST跨域，所以会自动给你转成GET
+        <p>移动APP开发好后需要实现软件自动升级功能，发现HBuilder具有“App资源在线升级更新”的功能，遂研究之。<br>经过一番测试，在源码思想的基础之上对其进行了优化。<br><a id="more"></a></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">	var wgtVer = null;  </span><br><span class="line">function plusReady()&#123;  </span><br><span class="line">    // 获取本地应用资源版本号  </span><br><span class="line">    plus.runtime.getProperty(plus.runtime.appid,function(inf)&#123;  </span><br><span class="line">        wgtVer=inf.version;  </span><br><span class="line">        console.log(&quot;当前应用版本：&quot; + wgtVer);  </span><br><span class="line">        console.log(&quot;=================版本测试=================&quot;);  </span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">if(window.plus)&#123;  </span><br><span class="line">    plusReady();  </span><br><span class="line">&#125;else&#123;  </span><br><span class="line">    document.addEventListener(&apos;plusready&apos;,plusReady,false);  </span><br><span class="line">    document.addEventListener(&apos;plusready&apos;,checkUpdate,false);  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">// 检测更新  </span><br><span class="line">var checkUrl=&quot;http://www.weimingcloud.cn/lmapp/versionCheck.html&quot;;  </span><br><span class="line">function checkUpdate()&#123;  </span><br><span class="line">    plus.nativeUI.showWaiting(&quot;检测更新...&quot;);  </span><br><span class="line">*       $ionicLoading.show(&#123;  </span><br><span class="line">        template: &quot;检测更新...&quot;  </span><br><span class="line">    &#125;);  </span><br><span class="line">    $timeout(function() &#123;  </span><br><span class="line">        $ionicLoading.hide();  </span><br><span class="line">    &#125;, 1200);*/  </span><br><span class="line">    var xhr = new XMLHttpRequest();  </span><br><span class="line">    xhr.onreadystatechange = function()&#123;  </span><br><span class="line">        switch(xhr.readyState)&#123;  </span><br><span class="line">            case 4:  </span><br><span class="line">            plus.nativeUI.closeWaiting();  </span><br><span class="line">            if(xhr.status == 200)&#123;  </span><br><span class="line">                console.log(&quot;检测更新成功：&quot; + xhr.responseText);  </span><br><span class="line">                // 读取最新版本号  </span><br><span class="line">                var newVer = xhr.responseText;  </span><br><span class="line">                console.log(&quot;最新版本:&quot; + newVer);  </span><br><span class="line">                if(wgtVer &amp;&amp; newVer &amp;&amp; (wgtVer != newVer))&#123;  </span><br><span class="line">                    // H5 plus事件处理,弹出提示信息对话框  </span><br><span class="line">                    plus.nativeUI.confirm(&quot;\&quot;立马送药\&quot;检测到新版本,是否更新?&quot;, function(e) &#123;  </span><br><span class="line">                        if(e.index == 0)&#123;  </span><br><span class="line">                            console.log(&quot;确定！&quot;);  </span><br><span class="line">                            downWgt(); // 下载升级包  </span><br><span class="line">                        &#125;  </span><br><span class="line">                    &#125;, &quot;                  立马送药&quot;, [&quot;确定&quot;, &quot;取消&quot;]);  </span><br><span class="line">                &#125;else&#123;  </span><br><span class="line">                    plus.nativeUI.alert(&quot;无新版本可更新！&quot;);  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;else&#123;  </span><br><span class="line">                console.log(&quot;检测更新失败！&quot;);  </span><br><span class="line">                plus.nativeUI.alert(&quot;检测更新失败！&quot;);  </span><br><span class="line">            &#125;  </span><br><span class="line">            break;  </span><br><span class="line">            default:  </span><br><span class="line">            break;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    xhr.open(&apos;GET&apos;,checkUrl);  </span><br><span class="line">    xhr.send();  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">// 下载wgt文件  </span><br><span class="line">var wgtUrl = &quot;http://www.weimingcloud.cn/lmapp/files/download/H5202FBD5.wgt&quot;;  </span><br><span class="line">  </span><br><span class="line">function downWgt()&#123;  </span><br><span class="line">    plus.nativeUI.showWaiting(&quot;下载wgt文件...&quot;);  </span><br><span class="line">              </span><br><span class="line">    plus.downloader.createDownload( wgtUrl, &#123;filename:&quot;_doc/update/&quot;&#125;, function(d,status)&#123;  </span><br><span class="line">        if ( status == 200 ) &#123;   </span><br><span class="line">            console.log(&quot;下载wgt成功：&quot;+d.filename);  </span><br><span class="line">            installWgt(d.filename); // 安装wgt包  </span><br><span class="line">        &#125; else &#123;  </span><br><span class="line">            console.log(&quot;下载wgt失败！&quot;);  </span><br><span class="line">            plus.nativeUI.alert(&quot;下载wgt失败！&quot;);  </span><br><span class="line">        &#125;  </span><br><span class="line">        plus.nativeUI.closeWaiting();  </span><br><span class="line">    &#125;).start();  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">// 更新应用资源  </span><br><span class="line">function installWgt(path)&#123;  </span><br><span class="line">    plus.nativeUI.showWaiting(&quot;安装wgt文件...&quot;);  </span><br><span class="line">    // force:false进行版本号校验，如果将要安装应用的版本号不高于现有应用的版本号则终止安装，并返回安装失败  </span><br><span class="line">    plus.runtime.install(path,&#123;force:false&#125;,function()&#123;  </span><br><span class="line">        plus.nativeUI.closeWaiting();  </span><br><span class="line">        console.log(&quot;安装wgt文件成功！&quot;);  </span><br><span class="line">        plus.nativeUI.alert(&quot;应用资源更新完成！&quot;,function()&#123;  </span><br><span class="line">            plus.runtime.restart();  </span><br><span class="line">        &#125;);  </span><br><span class="line">    &#125;,function(e)&#123;  </span><br><span class="line">        plus.nativeUI.closeWaiting();  </span><br><span class="line">        console.log(&quot;安装wgt文件失败[&quot; + e.code + &quot;]：&quot; + e.message);  </span><br><span class="line">        plus.nativeUI.alert(&quot;安装wgt文件失败[&quot; + e.code + &quot;]：&quot; + e.message);  </span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><pre><code>  注:确实在文件名上出问题,同一wgt文件名多次升级则出错提示了,即使提示&quot;应用资源更新完成！&quot; ,但版本号还是没更新的,因此同一wgt文件名只能使用一次, 这不知是哪里的bug.
 
-记录下来，希望可以帮助大家~~~~
+  果然是这个问题，更新包的名称不能重复，Android上第一次用了update.wgt。那么第二次就不能用这个名字了，得换一个名字，IOS是好的。
+
+  更新完成后，再次进入APP，发现版本号没变，还是原来的，接着有时更新....
+
+  遇到了上述问题，通过以上方法还是未能解决。难道这本身就是HBuilder的一个BUG?
+
+  检测更新更好的模式应该是客户端提交本地应用资源版本号到升级服务器，由升级服务器判断是否可更新并且返回App升级资源包下载地址，避免在客户端写资源下载地址；
+
+  更新时可以在后台静默下载，下次启动是直接更新，避免更新时打断用户操作。
+
+使用官方Demo可以，怀疑是自己的wgt出错。
+
+升级第一次成功，第二次也成功了！打成包试试.....1.0、2.0..格式可以。
 </code></pre>
       
       
@@ -337,13 +348,13 @@ jsonp不支持POST跨域，所以会自动给你转成GET
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/12/Jsonp-method-not-post/">Ajax提交之后，Method从POST变成GET</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/07/HBuilder实现软件自动升级/">HBuilder实现软件自动升级</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2017年12月12日 - 12时52分</p>
-        <p><span>最后更新:</span>2017年12月12日 - 12时58分</p>
+        <p><span>发布时间:</span>2019年05月07日 - 11时36分</p>
+        <p><span>最后更新:</span>2019年05月07日 - 11时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/12/Jsonp-method-not-post/" title="Ajax提交之后，Method从POST变成GET">https://xhyangdali.github.io/2017/12/12/Jsonp-method-not-post/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2017/12/12/Jsonp-method-not-post/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/07/HBuilder实现软件自动升级/" title="HBuilder实现软件自动升级">https://xhyangdali.github.io/2019/05/07/HBuilder实现软件自动升级/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/07/HBuilder实现软件自动升级/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -356,18 +367,9 @@ jsonp不支持POST跨域，所以会自动给你转成GET
 
 <nav id="article-nav">
   
-    <a href="/2017/12/25/H5移动端页面常见兼容性问题记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          H5移动端页面常见兼容性问题记录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/07/OpenStack生存情况/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">OpenStack生存情况</div>
+    <a href="/2018/08/06/ThinkPHP实现一键清除缓存方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ThinkPHP实现一键清除缓存方法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -378,7 +380,7 @@ jsonp不支持POST跨域，所以会自动给你转成GET
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax提交之后，Method从POST变成GET"><span class="toc-number">1.</span> <span class="toc-text">Ajax提交之后，Method从POST变成GET</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原因如下"><span class="toc-number">2.</span> <span class="toc-text">原因如下</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.</span> <span class="toc-text">源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">2.</span> <span class="toc-text">问题</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -444,13 +446,11 @@ jsonp不支持POST跨域，所以会自动给你转成GET
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/25/H5移动端页面常见兼容性问题记录/" title="上一篇: H5移动端页面常见兼容性问题记录">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/12/07/OpenStack生存情况/" title="下一篇: OpenStack生存情况">
+            <a href="/2018/08/06/ThinkPHP实现一键清除缓存方法/" title="下一篇: ThinkPHP实现一键清除缓存方法">
                 <i class="fa fa-angle-right"></i>
             </a>
         

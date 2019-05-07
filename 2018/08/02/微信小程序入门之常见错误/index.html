@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="Yang&#39;s Blog">
 <meta property="og:description" content="微信小程序开发遇到的常见问题，整理集合">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://xhyangdali.github.io/2018/08/02/微信小程序入门之常见错误/weixin.png">
+<meta property="og:image" content="https://xhyangdali.github.io/2018/08/02/微信小程序入门之常见错误/微信小程序入门之常见错误/weixin.png">
 <meta property="og:updated_time" content="2018-08-02T08:30:52.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序入门之常见错误">
 <meta name="twitter:description" content="微信小程序开发遇到的常见问题，整理集合">
-<meta name="twitter:image" content="https://xhyangdali.github.io/2018/08/02/微信小程序入门之常见错误/weixin.png">
+<meta name="twitter:image" content="https://xhyangdali.github.io/2018/08/02/微信小程序入门之常见错误/微信小程序入门之常见错误/weixin.png">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -278,7 +278,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>微信小程序开发遇到的常见问题，整理集合<br><img src="/2018/08/02/微信小程序入门之常见错误/weixin.png" alt="lbxx"><br><a id="more"></a></p>
+        <p>微信小程序开发遇到的常见问题，整理集合<br><img src="微信小程序入门之常见错误/weixin.png" alt="lbxx"><br><a id="more"></a></p>
 <h2 id="微信小程序–TabBar不显示"><a href="#微信小程序–TabBar不显示" class="headerlink" title="微信小程序–TabBar不显示"></a>微信小程序–TabBar不显示</h2><p>错误现象是，项目的app.json使用以下代码，却没有如期望那样在屏幕底部出现TabBar。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;pages&quot;:[</span><br><span class="line">    &quot;pages/clickDemo/clickDemo&quot;,</span><br><span class="line">    &quot;pages/logs/logs&quot;,</span><br><span class="line">    &quot;pages/index/index&quot;,</span><br><span class="line">    &quot;pages/mypage/mypage&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;window&quot;: &#123;</span><br><span class="line">    &quot;backgroundTextStyle&quot;: &quot;dark &quot;,</span><br><span class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#ddd&quot;,</span><br><span class="line">    &quot;navigationBarTitleText&quot;: &quot;Tabbar Demo&quot;,</span><br><span class="line">    &quot;navigationBarTextStyle&quot;: &quot;black&quot;,</span><br><span class="line">    &quot;backgroundColor&quot;: &quot;#ff0000&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tabBar&quot;: &#123;</span><br><span class="line">    &quot;color&quot;: &quot;#000000&quot;,</span><br><span class="line">    &quot;borderStyle&quot;: &quot;#000&quot;,</span><br><span class="line">    &quot;selectedColor&quot;: &quot;#9999FF&quot;,</span><br><span class="line">    &quot;list&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;首页&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;image/location_normal.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;image/location_selected.png&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;pagePath&quot;: &quot;pages/logs/logs&quot;,</span><br><span class="line">        &quot;text&quot;: &quot;设置&quot;,</span><br><span class="line">        &quot;iconPath&quot;: &quot;image/setting_normal.png&quot;,</span><br><span class="line">        &quot;selectedIconPath&quot;: &quot;image/setting_selecred.png&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>app.json头部的pages数组的第一项”pages/clickDemo/clickDemo”没有成为tabBar的一员，也就是在tabBar的list数组内没有链接clickDemo页面的条目。<br>具体对策有两种。<br>一，我们在list数组内加入链接clickDemo页面的条目，<br>二，把pages数组的第一项设置为”pages/index/index”，或者设置为”pages/logs/logs”。也就是说，pages数组的第一项必须是tabBar的list数组的一员。 </p>
@@ -546,7 +546,7 @@
     })
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
   <script language="javascript">

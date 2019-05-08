@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ios和安卓H5交互桥接案例 | Yang&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于开发需要OC或Java与JS间的交互，原理是:JS给OC/Java提供公开的API, 在OC/Java中可以手动调用此API, 并且可以接收OC/Java中传过来的参数,同时可回调OC/Java">
+<meta name="keywords" content="H5 H5+app Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios和安卓H5交互桥接案例">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/08/ios和安卓H5交互桥接案例/index.html">
+<meta property="og:site_name" content="Yang&#39;s Blog">
+<meta property="og:description" content="由于开发需要OC或Java与JS间的交互，原理是:JS给OC/Java提供公开的API, 在OC/Java中可以手动调用此API, 并且可以接收OC/Java中传过来的参数,同时可回调OC/Java">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-08T00:44:05.580Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ios和安卓H5交互桥接案例">
+<meta name="twitter:description" content="由于开发需要OC或Java与JS间的交互，原理是:JS给OC/Java提供公开的API, 在OC/Java中可以手动调用此API, 并且可以接收OC/Java中传过来的参数,同时可回调OC/Java">
+  
+    <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">莫等闲</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">生活不苟且</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">首页</a></li>
+                        
+                            <li><a href="/works">作品</a></li>
+                        
+                            <li><a href="/about">作者</a></li>
+                        
+                            <li><a href="/tags">标签</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=6ZCIh47HkZyMgZypmJjHioaE" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/xhyangdali" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/3DES/" style="font-size: 10px;">3DES</a> <a href="/tags/Articles/" style="font-size: 10px;">Articles</a> <a href="/tags/Baidu-map-Java/" style="font-size: 10px;">Baidu map Java</a> <a href="/tags/EXCEL-PHP/" style="font-size: 10px;">EXCEL PHP</a> <a href="/tags/H5-H5-app/" style="font-size: 10px;">H5 H5+app</a> <a href="/tags/H5-H5-app-Javascript/" style="font-size: 10px;">H5 H5+app Javascript</a> <a href="/tags/H5-WeiXin/" style="font-size: 10px;">H5 WeiXin</a> <a href="/tags/HEXO-IMAGE/" style="font-size: 10px;">HEXO IMAGE</a> <a href="/tags/Jsonp-Ajax/" style="font-size: 10px;">Jsonp Ajax</a> <a href="/tags/LIFE-Article/" style="font-size: 10px;">LIFE Article</a> <a href="/tags/LIFE-Future-Articles/" style="font-size: 10px;">LIFE Future Articles</a> <a href="/tags/Life/" style="font-size: 10px;">Life</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/OpenStack-Cloud/" style="font-size: 10px;">OpenStack Cloud</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/PhpQRCode/" style="font-size: 10px;">PhpQRCode</a> <a href="/tags/ThinkPHP-PHP/" style="font-size: 10px;">ThinkPHP PHP</a> <a href="/tags/WeChatApp-Error/" style="font-size: 10px;">WeChatApp Error</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://xhyangdali.github.io/">莫等闲</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">IT人、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">莫等闲</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">莫等闲</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">生活不苟且</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/works">作品</a></li>
+                
+                    <li><a href="/about">作者</a></li>
+                
+                    <li><a href="/tags">标签</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=6ZCIh47HkZyMgZypmJjHioaE" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/xhyangdali" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-ios和安卓H5交互桥接案例" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/08/ios和安卓H5交互桥接案例/" class="article-date">
+      <time datetime="2019-05-08T00:27:50.000Z" itemprop="datePublished">2019-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ios和安卓H5交互桥接案例
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JsBridge/">JsBridge</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5-H5-app-Javascript/">H5 H5+app Javascript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>由于开发需要OC或Java与JS间的交互，原理是:JS给OC/Java提供公开的API, 在OC/Java中可以手动调用此API, 并且可以接收OC/Java中传过来的参数,同时可回调OC/Java<br><a id="more"></a></p>
+<h2 id="ios与JS的交互案例A"><a href="#ios与JS的交互案例A" class="headerlink" title="ios与JS的交互案例A"></a>ios与JS的交互案例A</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            body&#123;</span><br><span class="line">                background-color:paleturquoise;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            button&#123;</span><br><span class="line">                border:0;</span><br><span class="line">                width: 150px;</span><br><span class="line">                height: 35px;</span><br><span class="line">                background-color: orangered;</span><br><span class="line">                color: white;</span><br><span class="line">                font-size: 16px;</span><br><span class="line">                border-radius: 6px;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h2&gt;JS调用OC中的方法&lt;/h2&gt;</span><br><span class="line">        &lt;button id=&quot;btn&quot;&gt;访问OC相册&lt;/button&gt;</span><br><span class="line">        &lt;button id=&quot;btn1&quot;&gt;调用OC提示窗&lt;/button&gt;</span><br><span class="line">        &lt;p&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">       // 这段代码是固定的，必须要放到js中</span><br><span class="line">       function setupWebViewJavascriptBridge(callback) &#123;</span><br><span class="line">            if (window.WebViewJavascriptBridge) &#123; return callback(WebViewJavascriptBridge); &#125;</span><br><span class="line">            if (window.WVJBCallbacks) &#123; return window.WVJBCallbacks.push(callback); &#125;</span><br><span class="line">            window.WVJBCallbacks = [callback];</span><br><span class="line">            var WVJBIframe = document.createElement(&apos;iframe&apos;);</span><br><span class="line">            WVJBIframe.style.display = &apos;none&apos;;</span><br><span class="line">            WVJBIframe.src = &apos;wvjbscheme://__BRIDGE_LOADED__&apos;;</span><br><span class="line">            document.documentElement.appendChild(WVJBIframe);</span><br><span class="line">            setTimeout(function() &#123; document.documentElement.removeChild(WVJBIframe) &#125;, 0)</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        // 与OC交互的所有JS方法都要在这里注册,才能让OC和JS之间相互调用</span><br><span class="line">       setupWebViewJavascriptBridge(function(bridge) &#123;</span><br><span class="line"></span><br><span class="line">           /* JS给OC提供公开的API, 在OC中可以手动调用此API, 并且可以接收OC中传过来的参数,同时可回调OC */</span><br><span class="line"></span><br><span class="line">           // 获取用户信息</span><br><span class="line">           bridge.registerHandler(&apos;getUserInfo&apos;, function(data, responseCallback) &#123;</span><br><span class="line">               console.log(&quot;OC中传递过来的参数:&quot;, data);</span><br><span class="line">               // 把处理好的结果返回给OC</span><br><span class="line">               responseCallback(&#123;&quot;userID&quot;:&quot;DX001&quot;, &quot;userName&quot;:&quot;旋之华&quot;, &quot;age&quot;:&quot;18&quot;, &quot;otherName&quot;:&quot;旋之华&quot;&#125;)</span><br><span class="line">           &#125;);</span><br><span class="line"></span><br><span class="line">           //  弹框输出（这里的数据是ios端返回的值）</span><br><span class="line">           bridge.registerHandler(&apos;alertMessage&apos;, function(data, responseCallback) &#123;</span><br><span class="line">               alert(data);</span><br><span class="line">           &#125;);</span><br><span class="line"></span><br><span class="line">           //  动态跳转到京东商城</span><br><span class="line">           bridge.registerHandler(&apos;pushToNewWebSite&apos;, function(data, responseCallback) &#123;</span><br><span class="line">               window.location.href = data.url;</span><br><span class="line">           &#125;);</span><br><span class="line"></span><br><span class="line">           bridge.registerHandler(&apos;insertImgToWebPage&apos;, function(data, responseCallback) &#123;</span><br><span class="line"></span><br><span class="line">                var img = document.createElement(&apos;img&apos;);</span><br><span class="line">                img.src = data.url;</span><br><span class="line">                img.width = 200;</span><br><span class="line">                document.body.appendChild(img);</span><br><span class="line"></span><br><span class="line">           &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           /* OC给JS提供公开的API, 在JS中可以手动调用此API, 并且可以接收OC中传过来的参数,同时可回调OC */</span><br><span class="line">                                    </span><br><span class="line">           // 调用OC中的打开相册方法（传数据给ios）</span><br><span class="line">           document.getElementById(&apos;btn&apos;).onclick = function () &#123;</span><br><span class="line">               bridge.callHandler(&apos;openCamera&apos;, &#123;&apos;count&apos;:&apos;10张&apos;&#125;, function responseCallback(responseData) &#123;</span><br><span class="line">                   console.log(&quot;OC中返回的参数:&quot;, responseData)</span><br><span class="line">               &#125;);</span><br><span class="line">           &#125;;</span><br><span class="line"></span><br><span class="line">           document.getElementById(&apos;btn1&apos;).onclick = function () &#123;</span><br><span class="line">               bridge.callHandler(&apos;showSheet&apos;, &apos;&apos;, function responseCallback(responseData) &#123;</span><br><span class="line">                   console.log(&quot;OC中返回的参数:&quot;, responseData)</span><br><span class="line">               &#125;);</span><br><span class="line">           &#125;;</span><br><span class="line">       &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="ios与JS的交互案例B"><a href="#ios与JS的交互案例B" class="headerlink" title="ios与JS的交互案例B"></a>ios与JS的交互案例B</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">//**********************</span><br><span class="line">    /*苹果设备回调*/</span><br><span class="line">    //注册WebViewJavascriptBridge</span><br><span class="line">    // 这段代码是固定的，必须要放到js中</span><br><span class="line">    function setupWebViewJavascriptBridge(callback) &#123;</span><br><span class="line">        if (window.WebViewJavascriptBridge) &#123; return callback(WebViewJavascriptBridge); &#125;</span><br><span class="line">        if (window.WVJBCallbacks) &#123; return window.WVJBCallbacks.push(callback); &#125;</span><br><span class="line">        window.WVJBCallbacks = [callback];</span><br><span class="line">        var WVJBIframe = document.createElement(&apos;iframe&apos;);</span><br><span class="line">        WVJBIframe.style.display = &apos;none&apos;;</span><br><span class="line">        WVJBIframe.src = &apos;wvjbscheme://__BRIDGE_LOADED__&apos;;</span><br><span class="line">        document.documentElement.appendChild(WVJBIframe);</span><br><span class="line">        setTimeout(function() &#123; document.documentElement.removeChild(WVJBIframe) &#125;, 0)</span><br><span class="line">    &#125;</span><br><span class="line">    function testClick1(code,msg,page) &#123;</span><br><span class="line">        //JS代码</span><br><span class="line">        // 与OC交互的所有JS方法都要在这里注册,才能让OC和JS之间相互调用</span><br><span class="line">        setupWebViewJavascriptBridge(function(bridge) &#123;</span><br><span class="line">            //  弹框输出（获得返回的数据）</span><br><span class="line">            bridge.registerHandler(&apos;alertMessage&apos;, function(data, responseCallback) &#123;</span><br><span class="line">                if(data.code==0)&#123;</span><br><span class="line">                    $(&apos;.tip&apos;).html(&apos;&lt;span class=&quot;gr&quot;&gt;注册成功，3秒后自动跳转&lt;/span&gt;&apos;);</span><br><span class="line">                    $(&apos;.register&apos;).unbind(&apos;click&apos;);</span><br><span class="line">                    setTimeout(function()&#123;</span><br><span class="line">                        window.location.href=&apos;/Login/index.html&apos;;</span><br><span class="line">                    &#125;,3000);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    $(&apos;.tip&apos;).html(&apos;&lt;span class=&quot;re&quot;&gt;&apos;+data.tishi+&apos;&lt;/span&gt;&apos;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            //JS换行</span><br><span class="line">            //获得Button</span><br><span class="line">            /*苹果方法调用传递数据*/（传递数据给ios）</span><br><span class="line">            //JS代码调用OC&quot;mpTestObjcCallBack&quot;的Handler,并传递参数&#123;&apos;foo&apos;: &apos;bar&apos;&#125; 如果有回调还会显示出来</span><br><span class="line">            bridge.callHandler(&apos;mpTestObjcCallBack&apos;,&#123;code:code,msg:msg,page:page&#125;, function(response) &#123;</span><br><span class="line">                console.log(&apos;JS获得OC返回的结果：&apos;, response);</span><br><span class="line">//                alert(data);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java与JS的交互案例"><a href="#java与JS的交互案例" class="headerlink" title="java与JS的交互案例"></a>java与JS的交互案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var maincode=&apos;0&apos;,</span><br><span class="line">                        host = window.location.host,</span><br><span class="line">                        mainmsg = &#123;url:&apos;http://&apos;+host,phone:phone,type:2,pwd:pwd,yzm:yzm&#125;,</span><br><span class="line">                        page = &apos;register&apos;;//页面名称</span><br><span class="line">                    testClick(maincode,mainmsg,page);             </span><br><span class="line"> /*安卓回调app设备(发消息给安卓)*/</span><br><span class="line">                    function testClick(code,msg,page) &#123;</span><br><span class="line">                        var data = &#123;code:code,msg:msg,page:page&#125;;</span><br><span class="line">                        window.WebViewJavascriptBridge.send(</span><br><span class="line">                            data</span><br><span class="line">                            , function(responseData) &#123;</span><br><span class="line">                                document.getElementById(&quot;show&quot;).innerHTML = &quot;repsonseData from java, data = &quot; + responseData</span><br><span class="line">                            &#125;</span><br><span class="line">                        );</span><br><span class="line">                    &#125;</span><br><span class="line">                    //安卓发消息给h5，方法注册</span><br><span class="line">                    function connectWebViewJavascriptBridge(callback) &#123;</span><br><span class="line">                        if (window.WebViewJavascriptBridge) &#123;</span><br><span class="line">                            callback(WebViewJavascriptBridge)</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            document.addEventListener(</span><br><span class="line">                                &apos;WebViewJavascriptBridgeReady&apos;</span><br><span class="line">                                , function() &#123;</span><br><span class="line">                                    callback(WebViewJavascriptBridge)</span><br><span class="line">                                &#125;,</span><br><span class="line">                                false</span><br><span class="line">                            );</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    connectWebViewJavascriptBridge(function(bridge) &#123;</span><br><span class="line">                        /*安卓方调用方法*/</span><br><span class="line">                        bridge.registerHandler(&quot;functionInJs&quot;, function(data, responseCallback) &#123;</span><br><span class="line">                            alert(data);</span><br><span class="line">                            var responseData = &quot;Javascript Says Right back aka!&quot;;</span><br><span class="line">                            responseCallback(responseData);</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;)</span><br></pre></td></tr></table></figure>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>谢谢客官</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/05/08/ios和安卓H5交互桥接案例/">ios和安卓H5交互桥接案例</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
+        <p><span>发布时间:</span>2019年05月08日 - 08时27分</p>
+        <p><span>最后更新:</span>2019年05月08日 - 08时44分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/08/ios和安卓H5交互桥接案例/" title="ios和安卓H5交互桥接案例">https://xhyangdali.github.io/2019/05/08/ios和安卓H5交互桥接案例/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/08/ios和安卓H5交互桥接案例/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/07/HBuilder实现软件自动升级/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HBuilder实现软件自动升级</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ios与JS的交互案例A"><span class="toc-number">1.</span> <span class="toc-text">ios与JS的交互案例A</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ios与JS的交互案例B"><span class="toc-number">2.</span> <span class="toc-text">ios与JS的交互案例B</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java与JS的交互案例"><span class="toc-number">3.</span> <span class="toc-text">java与JS的交互案例</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'yang',
+      repo: 'xhyangdali.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/05/07/HBuilder实现软件自动升级/" title="下一篇: HBuilder实现软件自动升级">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/ios和安卓H5交互桥接案例/">ios和安卓H5交互桥接案例</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/07/HBuilder实现软件自动升级/">HBuilder实现软件自动升级</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/06/ThinkPHP实现一键清除缓存方法/">ThinkPHP实现一键清除缓存方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/02/微信小程序入门之常见错误/">微信小程序入门之常见错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/31/如何提高PHP效率/">如何提高PHP效率</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/30/百度地图和高德地图坐标系的互相转换/">百度地图和高德地图坐标系的互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/07/30/My New Style/">My New Style</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/对自己好一些/">对自己好一些</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/13/PHP导出Excel/">PHP导出Excel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/hexo入门学习文章（带图片）/">hexo入门学习文章（带图片）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/22/PHP使用3DES算法加密解密字符串/">PHP使用3DES算法加密解密字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/11/使用PHPQRCode生成二维码/">使用PHPQRCode生成二维码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/程序员的三十岁/">程序员的三十岁</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/25/H5移动端页面常见兼容性问题记录/">H5移动端页面常见兼容性问题记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/Jsonp-method-not-post/">Ajax提交之后，Method从POST变成GET</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/OpenStack生存情况/">OpenStack生存情况</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-5/">百善孝为先</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/hexo-404-page/">在 Hexo 中创建匹配主题的404页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/2017.12.1/">第一篇博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 莫等闲
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/xhyangdali/xhyangdali.github.io" target="_blank">spfk</a> by yang
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >访客: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

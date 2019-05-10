@@ -3087,6 +3087,7 @@ a.gitment-editor-footer-tip:hover {
 }
 .article-entry p {
   margin-top: 10px;
+  text-indent: 2em;
 }
 .article-entry p code,
 .article-entry li code {

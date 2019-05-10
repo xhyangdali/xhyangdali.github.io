@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>PHP导出Excel | Yang&#39;s Blog</title>
+  <title>Java RMI | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这些天在使用PHPExcel导出数据时，5000条数据竟然挂了。研究之后有些明悟，PHPExcel做了很多处理，我在这里理解为渲染，就会占用过多的空间，‘膨胀’的空间导致内存使用过大，就挂了。">
-<meta name="keywords" content="EXCEL PHP">
+  <meta name="description" content="Java RMI：Java远程方法调用，即Java RMI（Java Remote Method Invocation）是Java编程语言里，一种用于实现远程过程调用的应用程序编程接口。它使客户机上运行的程序可以调用远程服务器上的对象。远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可">
+<meta name="keywords" content="Java RMI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP导出Excel">
-<meta property="og:url" content="https://xhyangdali.github.io/2018/02/13/PHP导出Excel/index.html">
+<meta property="og:title" content="Java RMI">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/10/Java RMI/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="这些天在使用PHPExcel导出数据时，5000条数据竟然挂了。研究之后有些明悟，PHPExcel做了很多处理，我在这里理解为渲染，就会占用过多的空间，‘膨胀’的空间导致内存使用过大，就挂了。">
+<meta property="og:description" content="Java RMI：Java远程方法调用，即Java RMI（Java Remote Method Invocation）是Java编程语言里，一种用于实现远程过程调用的应用程序编程接口。它使客户机上运行的程序可以调用远程服务器上的对象。远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可能简化远程接口对象的使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-13T06:43:28.191Z">
+<meta property="og:updated_time" content="2019-05-10T00:49:44.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP导出Excel">
-<meta name="twitter:description" content="这些天在使用PHPExcel导出数据时，5000条数据竟然挂了。研究之后有些明悟，PHPExcel做了很多处理，我在这里理解为渲染，就会占用过多的空间，‘膨胀’的空间导致内存使用过大，就挂了。">
+<meta name="twitter:title" content="Java RMI">
+<meta name="twitter:description" content="Java RMI：Java远程方法调用，即Java RMI（Java Remote Method Invocation）是Java编程语言里，一种用于实现远程过程调用的应用程序编程接口。它使客户机上运行的程序可以调用远程服务器上的对象。远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可能简化远程接口对象的使用。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-PHP导出Excel" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java RMI" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/02/13/PHP导出Excel/" class="article-date">
-      <time datetime="2018-02-13T06:25:10.000Z" itemprop="datePublished">2018-02-13</time>
+      <a href="/2019/05/10/Java RMI/" class="article-date">
+      <time datetime="2019-05-10T00:28:00.000Z" itemprop="datePublished">2019-05-10</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      PHP导出Excel
+      Java RMI
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/PHP/">PHP</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EXCEL-PHP/">EXCEL PHP</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-RMI/">Java RMI</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,8 +276,26 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>这些天在使用PHPExcel导出数据时，5000条数据竟然挂了。<br>研究之后有些明悟，PHPExcel做了很多处理，我在这里理解为渲染，就会占用过多的空间，‘膨胀’的空间导致内存使用过大，就挂了。<br><a id="more"></a><br>简单的导出操作，没有必要使用PHPExcel。贴出代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">*处理Excel导出 </span><br><span class="line">*@param $datas array 设置表格数据 </span><br><span class="line">*@param $titlename string 设置head </span><br><span class="line">*@param $title string 设置表头 </span><br><span class="line">*/ </span><br><span class="line">public function excelData($datas,$titlename,$title,$filename)&#123; </span><br><span class="line">    $str = &quot;&lt;html xmlns:o=\&quot;urn:schemas-microsoft-com:office:office\&quot;\r\nxmlns:x=\&quot;urn:schemas-microsoft-com:office:excel\&quot;\r\nxmlns=\&quot;http://www.w3.org/TR/REC-html40\&quot;&gt;\r\n&lt;head&gt;\r\n&lt;meta http-equiv=Content-Type content=\&quot;text/html; charset=utf-8\&quot;&gt;\r\n&lt;/head&gt;\r\n&lt;body&gt;&quot;; </span><br><span class="line">    $str .=&quot;&lt;table border=1&gt;&lt;head&gt;&quot;.$titlename.&quot;&lt;/head&gt;&quot;; </span><br><span class="line">    $str .= $title; </span><br><span class="line">    foreach ($datas  as $key=&gt; $rt ) </span><br><span class="line">    &#123; </span><br><span class="line">        $str .= &quot;&lt;tr&gt;&quot;; </span><br><span class="line">        foreach ( $rt as $k =&gt; $v ) </span><br><span class="line">        &#123; </span><br><span class="line">            $str .= &quot;&lt;td&gt;&#123;$v&#125;&lt;/td&gt;&quot;; </span><br><span class="line">        &#125; </span><br><span class="line">        $str .= &quot;&lt;/tr&gt;\n&quot;; </span><br><span class="line">    &#125; </span><br><span class="line">    $str .= &quot;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;&quot;; </span><br><span class="line">    header( &quot;Content-Type: application/vnd.ms-excel; name=&apos;excel&apos;&quot; ); </span><br><span class="line">    header( &quot;Content-type: application/octet-stream&quot; ); </span><br><span class="line">    header( &quot;Content-Disposition: attachment; filename=&quot;.$filename ); </span><br><span class="line">    header( &quot;Cache-Control: must-revalidate, post-check=0, pre-check=0&quot; ); </span><br><span class="line">    header( &quot;Pragma: no-cache&quot; ); </span><br><span class="line">    header( &quot;Expires: 0&quot; ); </span><br><span class="line">    exit( $str ); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>html的表格转换excel的表格；此种方法适应于设置各种单元格的显示，合并，只需设置html的table，设置css就能导出各式各样的excel模板。<br>导出一个带表头，表头带颜色，设置字体大小，居中，排版适中；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$dataResult = array();      //todo:导出数据（自行设置） </span><br><span class="line">$headTitle = &quot;XX公司 XX记录&quot;; </span><br><span class="line">$title = &quot;XX公司记录&quot;; </span><br><span class="line">$headtitle= &quot;&lt;tr style=&apos;height:50px;border-style:none;&gt;&lt;th border=\&quot;0\&quot; style=&apos;height:60px;width:270px;font-size:22px;&apos; colspan=&apos;11&apos; &gt;&#123;$headTitle&#125;&lt;/th&gt;&lt;/tr&gt;&quot;; </span><br><span class="line">$titlename = &quot;&lt;tr&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos; &gt;合作商户&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos; &gt;会员卡号&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;车主姓名&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:150px;&apos;&gt;手机号&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;车牌号&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:100px;&apos;&gt;类型&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;名称&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;面值&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;数量&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:70px;&apos;&gt;时间&lt;/th&gt; </span><br><span class="line">               &lt;th style=&apos;width:90px;&apos;&gt;截至有效期&lt;/th&gt; </span><br><span class="line">           &lt;/tr&gt;&quot;; </span><br><span class="line">           $filename = $title.&quot;.xls&quot;; </span><br><span class="line">       $this-&gt;excelData($dataResult,$titlename,$headtitle,$filename);</span><br></pre></td></tr></table></figure></p>
+        <p>Java RMI：Java远程方法调用，即Java RMI（Java Remote Method Invocation）是Java编程语言里，一种用于实现远程过程调用的应用程序编程接口。它使客户机上运行的程序可以调用远程服务器上的对象。远程方法调用特性使Java编程人员能够在网络环境中分布操作。RMI全部的宗旨就是尽可能简化远程接口对象的使用。<br><a id="more"></a></p>
+<h1 id="与RPC的区别"><a href="#与RPC的区别" class="headerlink" title="与RPC的区别"></a>与RPC的区别</h1><p>我们知道远程过程调用（Remote Procedure Call, RPC）可以用于一个进程调用另一个进程（很可能在另一个远程主机上）中的过程，从而提供了过程的分布能力。Java 的 RMI 则在 RPC 的基础上向前又迈进了一步，即提供分布式对象间的通讯。</p>
+<p>RMI（Remote Method Invocation）为远程方法调用，是允许运行在一个Java虚拟机的对象调用运行在另一个Java虚拟机上的对象的方法。这两个虚拟机可以是运行在相同计算机上的不同进程中，也可以是运行在网络上的不同计算机中。</p>
+<h1 id="RMI工作原理"><a href="#RMI工作原理" class="headerlink" title="RMI工作原理"></a>RMI工作原理</h1><p>RMI能让一个Java程序去调用网络中另一台计算机的Java对象的方法，那么调用的效果就像是在本机上调用一样。通俗的讲：A机器上面有一个class，通过远程调用，B机器调用这个class 中的方法。</p>
+<p>RMI，远程方法调用（Remote Method Invocation）是Enterprise JavaBeans的支柱，是建立分布式Java应用程序的方便途径。RMI是非常容易使用的，但是它非常的强大。</p>
+<p>RMI的基础是接口，RMI构架基于一个重要的原理：定义接口和定义接口的具体实现是分开的。下面我们通过具体的例子，建立一个简单的远程计算服务和使用它的客户程序</p>
+<h1 id="RMI包含的部分"><a href="#RMI包含的部分" class="headerlink" title="RMI包含的部分"></a>RMI包含的部分</h1><ul>
+<li>远程服务的接口定义</li>
+<li>远程服务接口的具体实现</li>
+<li>桩（Stub）和框架（Skeleton）文件</li>
+<li>一个运行远程服务的服务器</li>
+<li>一个RMI命名服务，它允许客户端去发现这个远程服务</li>
+<li>类文件的提供者（一个HTTP或者FTP服务器）</li>
+<li>一个需要这个远程服务的客户端程序</li>
+</ul>
+<h1 id="RMI的用途"><a href="#RMI的用途" class="headerlink" title="RMI的用途?"></a>RMI的用途?</h1><p>RMI的用途是为分布式Java应用程序之间的远程通信提供服务，提供分布式服务。目前主要应用时封装在各个J2EE项目框架中，例如Spring，EJB（Spring和EJB均封装了RMI技术）</p>
+<h2 id="Spring中实现RMI"><a href="#Spring中实现RMI" class="headerlink" title="Spring中实现RMI"></a>Spring中实现RMI</h2><p>①在服务器端定义服务的接口，定义特定的类实现这些接口；②在服务器端使用org.springframework.remoting.rmi.RmiServiceExporter类来注册服务；③在客户端使用org.springframework.remoting.rmi.RmiProxyFactoryBean来实现远程服务的代理功能；④在客户端定义访问与服务器端服务接口相同的类</p>
+<h1 id="RMI的局限"><a href="#RMI的局限" class="headerlink" title="RMI的局限"></a>RMI的局限</h1><p>RMI目前使用Java远程消息交换协议JRMP（Java Remote Messaging Protocol）进行通信。JRMP是专为Java的远程对象制定的协议，由于JRMP是专为Java对象制定的，因此，RMI对于用非Java语言开发的应用系统的支持不足。不能与用非Java语言书写的对象进行通信（意思是只支持客户端和服务器端都是Java程序的代码的远程调用）。</p>
+<p>由于客户机和服务器都是使用Java编写的，二者平台兼容性的要求仅仅是双方都运行在版本兼容的Java虚拟机上。</p>
+<h1 id="RMI调用远程方法的参数和返回值"><a href="#RMI调用远程方法的参数和返回值" class="headerlink" title="RMI调用远程方法的参数和返回值"></a>RMI调用远程方法的参数和返回值</h1><p>当调用远程对象上的方法时，客户机除了可以将原始类型的数据作为参数一外，还可以将对象作为参数来传递，与之相对应的是返回值，可以返回原始类型或对象，这些都是通过Java的对象序列化（serialization）技术来实现的。（换而言之：参数或者返回值如果是对象的话必须实现Serializable接口）</p>
 
       
       
@@ -333,13 +351,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/02/13/PHP导出Excel/">PHP导出Excel</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/10/Java RMI/">Java RMI</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2018年02月13日 - 14时25分</p>
-        <p><span>最后更新:</span>2018年02月13日 - 14时43分</p>
+        <p><span>发布时间:</span>2019年05月10日 - 08时28分</p>
+        <p><span>最后更新:</span>2019年05月10日 - 08时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/02/13/PHP导出Excel/" title="PHP导出Excel">https://xhyangdali.github.io/2018/02/13/PHP导出Excel/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2018/02/13/PHP导出Excel/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/10/Java RMI/" title="Java RMI">https://xhyangdali.github.io/2019/05/10/Java RMI/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/10/Java RMI/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -352,18 +370,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/02/13/对自己好一些/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          对自己好一些
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/22/hexo入门学习文章（带图片）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo入门学习文章（带图片）</div>
+    <a href="/2019/05/09/软考-系统架构设计师/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">软考-系统架构设计师</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -374,7 +383,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#与RPC的区别"><span class="toc-number">1.</span> <span class="toc-text">与RPC的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RMI工作原理"><span class="toc-number">2.</span> <span class="toc-text">RMI工作原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RMI包含的部分"><span class="toc-number">3.</span> <span class="toc-text">RMI包含的部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RMI的用途"><span class="toc-number">4.</span> <span class="toc-text">RMI的用途?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring中实现RMI"><span class="toc-number">4.1.</span> <span class="toc-text">Spring中实现RMI</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RMI的局限"><span class="toc-number">5.</span> <span class="toc-text">RMI的局限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RMI调用远程方法的参数和返回值"><span class="toc-number">6.</span> <span class="toc-text">RMI调用远程方法的参数和返回值</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -440,13 +449,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/13/对自己好一些/" title="上一篇: 对自己好一些">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/01/22/hexo入门学习文章（带图片）/" title="下一篇: hexo入门学习文章（带图片）">
+            <a href="/2019/05/09/软考-系统架构设计师/" title="下一篇: 软考-系统架构设计师">
                 <i class="fa fa-angle-right"></i>
             </a>
         

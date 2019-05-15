@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>软考-系统架构设计师 | Yang&#39;s Blog</title>
+  <title>H5+APP实现扫码功能 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工作这么多年来，由于工作的特殊性需要一直需要保持学习状态。但是时间一长发现缺少总结，阶段性的成果也不明显。从事开发工作以来技术有所提高基本可以达到工作需求，但是对于软件架构方面缺少系统的学习。 所以决定通过软考（系统架构师）督促自己加速软件架构方面的学习。">
-<meta name="keywords" content="软考 系统架构设计师">
+  <meta name="description" content="无论是在手机网站还是手机APP中，扫码功能都是比较常见的，本文将带你实现H5+APP扫码功能，使用Barcode模块(H5+Mui)条码扫描识别插件">
+<meta name="keywords" content="H5 H5+app">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软考-系统架构设计师">
-<meta property="og:url" content="https://xhyangdali.github.io/2019/05/09/软考-系统架构设计师/index.html">
+<meta property="og:title" content="H5+APP实现扫码功能">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="工作这么多年来，由于工作的特殊性需要一直需要保持学习状态。但是时间一长发现缺少总结，阶段性的成果也不明显。从事开发工作以来技术有所提高基本可以达到工作需求，但是对于软件架构方面缺少系统的学习。 所以决定通过软考（系统架构师）督促自己加速软件架构方面的学习。">
+<meta property="og:description" content="无论是在手机网站还是手机APP中，扫码功能都是比较常见的，本文将带你实现H5+APP扫码功能，使用Barcode模块(H5+Mui)条码扫描识别插件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-10T01:07:02.533Z">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/1.png">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/2.png">
+<meta property="og:updated_time" content="2019-05-15T00:41:12.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="软考-系统架构设计师">
-<meta name="twitter:description" content="工作这么多年来，由于工作的特殊性需要一直需要保持学习状态。但是时间一长发现缺少总结，阶段性的成果也不明显。从事开发工作以来技术有所提高基本可以达到工作需求，但是对于软件架构方面缺少系统的学习。 所以决定通过软考（系统架构师）督促自己加速软件架构方面的学习。">
+<meta name="twitter:title" content="H5+APP实现扫码功能">
+<meta name="twitter:description" content="无论是在手机网站还是手机APP中，扫码功能都是比较常见的，本文将带你实现H5+APP扫码功能，使用Barcode模块(H5+Mui)条码扫描识别插件">
+<meta name="twitter:image" content="https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +237,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-软考-系统架构设计师" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-H5+APP实现扫码功能" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/09/软考-系统架构设计师/" class="article-date">
-      <time datetime="2019-05-09T07:51:05.000Z" itemprop="datePublished">2019-05-09</time>
+      <a href="/2019/05/15/H5+APP实现扫码功能/" class="article-date">
+      <time datetime="2019-05-15T00:22:28.000Z" itemprop="datePublished">2019-05-15</time>
 </a>
     </div>
   
@@ -251,7 +254,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      软考-系统架构设计师
+      H5+APP实现扫码功能
     </h1>
   
 
@@ -260,13 +263,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/软考/">软考</a>
+    <a class="article-category-link" href="/categories/Hbuilder/">Hbuilder</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软考-系统架构设计师/">软考 系统架构设计师</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5-H5-app/">H5 H5+app</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,49 +279,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ul>
-<li>工作这么多年来，由于工作的特殊性需要一直需要保持学习状态。但是时间一长发现缺少总结，阶段性的成果也不明显。从事开发工作以来技术有所提高基本可以达到工作需求，但是对于软件架构方面缺少系统的学习。</li>
-<li>所以决定通过软考（系统架构师）督促自己加速软件架构方面的学习。<a id="more"></a>
-</li>
-</ul>
-<h1 id="备考方法"><a href="#备考方法" class="headerlink" title="备考方法"></a>备考方法</h1><p>1、系统架构师一般购买希赛的张有生、王勇主编《系统架构设计师教程》（第二版）电子工业出版社，属于辅导教程。我就是看的这本书。你可以作为主要参考。针对历年考试对于系统架构师知识深度的要求，在数据挖掘，系统集群管理，系统架构设计，等方面可以结合自己工作的特点进行有针对系的复习。另外 有具体的项目经验很重要的，很多书本的知识必须经过实践的检验，才能深刻理解。</p>
-<p>2、把书看完后就做真题咯，真题可以多做几遍，答案的话可以到希赛网去找找，也许能找到。把这些做完后有条件可以买一套希赛的视频，不需要太贵的就那种串讲的也很好，根据视频再复习一遍，然后就大胆的去考试。</p>
-<h1 id="复习计划"><a href="#复习计划" class="headerlink" title="复习计划"></a>复习计划</h1><p>系统学习理论知识 – 个工作日 5月13日 8月22日</p>
-<p>分类习题解答 70 个工作日 8月23日 10月31日</p>
-<p>最后冲刺 9 个工作日 11月1日 11月9日</p>
-<h1 id="考核内容"><a href="#考核内容" class="headerlink" title="考核内容"></a>考核内容</h1><p>掌握数制及其转换、数据的机内表示、算术和逻辑运算、应用数学基础知识；</p>
-<p>掌握计算机硬软件与网络的基础知识；</p>
-<p>熟悉信息系统开发过程；</p>
-<p>理解信息系统开发标准、常用信息技术标准；</p>
-<p>熟悉主流的中间件和应用服务器平台；</p>
-<p>掌握软件系统建模、系统架构设计基本技术；</p>
-<p>熟练掌握信息安全技术、安全策略、安全管理知识；</p>
-<p>了解信息化、信息技术有关法律、法规的基础知识；</p>
-<p>了解用户的行业特点，并根据行业特点架构合适的系统设计；</p>
-<p>掌握应用的数学基础知识；</p>
-<p>熟练阅读和正确理解相关领域的英文文献。</p>
-<h1 id="考试框架"><a href="#考试框架" class="headerlink" title="考试框架"></a>考试框架</h1><p>第 1 章 计算机组成与体系结构</p>
-<p>第 2 章 操作系统</p>
-<p>第 3 章 数据库系统</p>
-<p>第 4 章 计算机网络</p>
-<p>第 5 章 系统性能评价</p>
-<p>第 6 章 开发方法</p>
-<p>第 7 章 系统规划</p>
-<p>第 8 章 系统分析与设计方法</p>
-<p>第 9 章 软件架构设计</p>
-<p>第 10 章 设计模式</p>
-<p>第 11 章 测试评审方法</p>
-<p>第 12 章 嵌入式系统设计</p>
-<p>第 13 章 开发管理</p>
-<p>第 14 章 信息系统基础知识</p>
-<p>第 15 章 基于中间件的开发</p>
-<p>第 16 章 安全性和保密性设计</p>
-<p>第 17 章 系统的可靠性分析与设计</p>
-<p>第 18 章 软件的知识产权保护</p>
-<p>第 19 章 标准化知识</p>
-<p>第 20 章 应用数学</p>
-<p>第 21 章 虚拟化、云计算与物联网</p>
-<h1 id="备考资源"><a href="#备考资源" class="headerlink" title="备考资源"></a>备考资源</h1><p>软考网考试目录 <a href="http://www.ruankao.org.cn/book/bookdetails?id=100000180628114721110519" target="_blank" rel="noopener">http://www.ruankao.org.cn/book/bookdetails?id=100000180628114721110519</a></p>
+        <p>无论是在手机网站还是手机APP中，扫码功能都是比较常见的，本文将带你实现H5+APP扫码功能，使用Barcode模块(H5+Mui)条码扫描识别插件<br><a id="more"></a></p>
+<h1 id="插件导入"><a href="#插件导入" class="headerlink" title="插件导入"></a>插件导入</h1><p>先导入Barcode模块到项目中。<br><img src="/2019/05/15/H5+APP实现扫码功能/1.png" alt="插件导入"></p>
+<h1 id="扫码功能实现页面"><a href="#扫码功能实现页面" class="headerlink" title="扫码功能实现页面"></a>扫码功能实现页面</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">		&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;</span><br><span class="line">		&lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot; /&gt;</span><br><span class="line">		&lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot; /&gt;</span><br><span class="line">		&lt;title&gt; 司机端二维码扫码&lt;/title&gt;		</span><br><span class="line">		&lt;script src=&quot;../js/mui.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;../js/common.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;../js/app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot; src=&quot;../js/base.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			var ws = null,</span><br><span class="line">				wo = null;</span><br><span class="line">			var scan = null,</span><br><span class="line">				domready = false;</span><br><span class="line">			//</span><br><span class="line">			mui.init();</span><br><span class="line">			// H5 plus事件处理</span><br><span class="line">			function plusReady() &#123;</span><br><span class="line">				if(ws || !window.plus || !domready) &#123;</span><br><span class="line">					return;</span><br><span class="line">				&#125;</span><br><span class="line">				// 获取窗口对象</span><br><span class="line">				ws = plus.webview.currentWebview();</span><br><span class="line">				wo = ws.opener();</span><br><span class="line">				// 开始扫描</span><br><span class="line">				ws.addEventListener(&apos;show&apos;, function() &#123;</span><br><span class="line">					scan = new plus.barcode.Barcode(&apos;bcid&apos;);</span><br><span class="line">					scan.onmarked = onmarked;</span><br><span class="line">					scan.start(&#123;</span><br><span class="line">						conserve: true,</span><br><span class="line">						filename: &apos;_doc/barcode/&apos;</span><br><span class="line">					&#125;);</span><br><span class="line">					//console.log(&apos;scan on ...&apos;);</span><br><span class="line">				&#125;, false);</span><br><span class="line">				// 显示页面并关闭等待框</span><br><span class="line">				ws.show(&apos;pop-in&apos;);</span><br><span class="line">				//console.log(&apos;scan it ...&apos;);</span><br><span class="line">				//wo.evalJS(&apos;closeWaiting()&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			if(window.plus) &#123;</span><br><span class="line">				plusReady();</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				document.addEventListener(&apos;plusready&apos;, plusReady, false);</span><br><span class="line">			&#125;</span><br><span class="line">			// 监听DOMContentLoaded事件</span><br><span class="line">			document.addEventListener(&apos;DOMContentLoaded&apos;, function() &#123;</span><br><span class="line">				domready = true;</span><br><span class="line">				plusReady();</span><br><span class="line">			&#125;, false);</span><br><span class="line">			// 二维码扫描成功</span><br><span class="line">			function onmarked(type, result, file) &#123;</span><br><span class="line">				//console.log(&apos;scan result ...&apos;);</span><br><span class="line">				switch(type) &#123;</span><br><span class="line">					case plus.barcode.QR:</span><br><span class="line">						type = &apos;QR&apos;;</span><br><span class="line">						break;</span><br><span class="line">					case plus.barcode.EAN13:</span><br><span class="line">						type = &apos;EAN13&apos;;</span><br><span class="line">						break;</span><br><span class="line">					case plus.barcode.EAN8:</span><br><span class="line">						type = &apos;EAN8&apos;;</span><br><span class="line">						break;</span><br><span class="line">					default:</span><br><span class="line">						type = &apos;其它&apos; + type;</span><br><span class="line">						break;</span><br><span class="line">				&#125;</span><br><span class="line">				result = result.replace(/\r\n/g, &apos;&apos;);</span><br><span class="line">				if(result)&#123;</span><br><span class="line">					if(result == &quot;&quot;)&#123;</span><br><span class="line">						var err = &quot;请扫描正确有效的二维码！&quot;;</span><br><span class="line">						doSpeaking(err);</span><br><span class="line">						mui.toast(err);</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						try &#123;</span><br><span class="line">						   var json = JSON.parse(result);</span><br><span class="line">						   //验票逻辑处理</span><br><span class="line">						   if(json.TicketId)&#123;</span><br><span class="line">						   		QRScan(json);</span><br><span class="line">						   &#125;else&#123;</span><br><span class="line">						   		var err = &quot;请扫描正确有效的二维码！&quot;;</span><br><span class="line">								doSpeaking(err);</span><br><span class="line">								mui.toast(err);</span><br><span class="line">						   &#125;</span><br><span class="line">						&#125;</span><br><span class="line">						catch(err)&#123;</span><br><span class="line">						    var err = &quot;请扫描正确有效的二维码！&quot;;</span><br><span class="line">							doSpeaking(err);</span><br><span class="line">							mui.toast(err);</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					var err = &quot;请扫描正确有效的二维码！&quot;;</span><br><span class="line">					doSpeaking(err);</span><br><span class="line">					mui.toast(err);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				//wo.evalJS(&quot;scaned(&apos;&quot; + type + &quot;&apos;,&apos;&quot; + result + &quot;&apos;,&apos;&quot; + file + &quot;&apos;);&quot;);</span><br><span class="line">				back();</span><br><span class="line">			&#125;</span><br><span class="line">			// 从相册中选择二维码图片 </span><br><span class="line">			function scanPicture() &#123;</span><br><span class="line">				plus.gallery.pick(function(path) &#123;</span><br><span class="line">					plus.barcode.scan(path, onmarked, function(error) &#123;</span><br><span class="line">						plus.nativeUI.alert(&apos;无法识别此图片&apos;);</span><br><span class="line">					&#125;);</span><br><span class="line">				&#125;, function(err) &#123;</span><br><span class="line">					console.log(&apos;Failed: &apos; + err.message);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;</span><br><span class="line">			/*</span><br><span class="line">			 * 依据扫码结果提交电子票数据</span><br><span class="line">			 * @param json 扫码结果处理</span><br><span class="line">			 */</span><br><span class="line">			function QRScan(json) &#123;</span><br><span class="line">				var nwaiting = plus.nativeUI.showWaiting();</span><br><span class="line">				var params = &#123;&#125;;</span><br><span class="line">				params.token = getTokenStr(); //token</span><br><span class="line">				params.order_id = json.TicketId;</span><br><span class="line">				var url_ = getNetUrl(&apos;handCheckTicketUrl&apos;);</span><br><span class="line">				//mui.toast(JSON.stringify(url_)+&apos;  &apos;+JSON.stringify(params));</span><br><span class="line">				var result = getDataByPost(params, url_); //提交数据 &#123;code:&apos;-1&apos;,msg:&apos;Test...&apos;&#125;</span><br><span class="line">				//mui.toast(JSON.stringify(result));</span><br><span class="line">				if (result.code == &apos;0&apos;) &#123;</span><br><span class="line">					var str_ = &quot; 验票成功 ，总共  &quot; + result.count + &quot;  位乘客 。&quot;;</span><br><span class="line">					doSpeaking(str_);</span><br><span class="line">					mui.toast(str_);</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					var str_ = &quot; 验票失败 原因：&quot; + result.msg;;</span><br><span class="line">					doSpeaking(str_);</span><br><span class="line">					mui.toast(str_);</span><br><span class="line">				&#125;</span><br><span class="line">				nwaiting.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">		&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/common.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">		&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">			#bcid &#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 0px;</span><br><span class="line">				bottom: 44px;</span><br><span class="line">				text-align: center;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.tip &#123;</span><br><span class="line">				color: #FFFFFF;</span><br><span class="line">				font-weight: bold;</span><br><span class="line">				text-shadow: 0px -1px #103E5C;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			footer &#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 44px;</span><br><span class="line">				position: absolute;</span><br><span class="line">				bottom: 0px;</span><br><span class="line">				line-height: 44px;</span><br><span class="line">				text-align: center;</span><br><span class="line">				color: #FFF;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.fbt &#123;</span><br><span class="line">				width: 100%;</span><br><span class="line">				height: 100%;</span><br><span class="line">				background-color: #177DE6;</span><br><span class="line">				float: left;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			.fbt:active &#123;</span><br><span class="line">				-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);</span><br><span class="line">				box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body style=&quot;background-color: #000000;&quot;&gt;</span><br><span class="line">		&lt;div id=&quot;bcid&quot;&gt;</span><br><span class="line">			&lt;div style=&quot;height:40%&quot;&gt;&lt;/div&gt;</span><br><span class="line">			&lt;p class=&quot;tip&quot;&gt;...载入中...&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;footer&gt;</span><br><span class="line">			&lt;div class=&quot;fbt&quot; onclick=&quot;back()&quot;&gt;取　 消&lt;/div&gt;</span><br><span class="line">			&lt;!--&lt;div class=&quot;fbt&quot; onclick=&quot;scanPicture()&quot;&gt;从相册选择二维码&lt;/div&gt;--&gt;</span><br><span class="line">		&lt;/footer&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="扫码功能调用"><a href="#扫码功能调用" class="headerlink" title="扫码功能调用"></a>扫码功能调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//扫码按钮事件</span><br><span class="line">qrButton.addEventListener(&apos;tap&apos;, function(event) &#123;</span><br><span class="line">		</span><br><span class="line">	mui.openWindow(&#123;</span><br><span class="line">		url: &apos;qrCode.html&apos;,</span><br><span class="line">		id: &apos;qrCode&apos;,</span><br><span class="line">		show: &#123;</span><br><span class="line">				aniShow: &apos;pop-in&apos;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p><img src="/2019/05/15/H5+APP实现扫码功能/2.png" alt="实现效果"></p>
 
       
       
@@ -374,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/09/软考-系统架构设计师/">软考-系统架构设计师</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/15/H5+APP实现扫码功能/">H5+APP实现扫码功能</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2019年05月09日 - 15时51分</p>
-        <p><span>最后更新:</span>2019年05月10日 - 09时07分</p>
+        <p><span>发布时间:</span>2019年05月15日 - 08时22分</p>
+        <p><span>最后更新:</span>2019年05月15日 - 08时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/09/软考-系统架构设计师/" title="软考-系统架构设计师">https://xhyangdali.github.io/2019/05/09/软考-系统架构设计师/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/09/软考-系统架构设计师/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/15/H5+APP实现扫码功能/" title="H5+APP实现扫码功能">https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/15/H5+APP实现扫码功能/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -393,18 +358,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/10/Java RMI/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Java RMI
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/08/ThinkPHP5如何自动生成API文档/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ThinkPHP5如何自动生成API文档</div>
+    <a href="/2019/05/14/H5+APP实现联网和定位权限提醒并跳转至设置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">H5+APP实现联网和定位权限提醒并跳转至设置</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -415,7 +371,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#备考方法"><span class="toc-number">1.</span> <span class="toc-text">备考方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#复习计划"><span class="toc-number">2.</span> <span class="toc-text">复习计划</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#考核内容"><span class="toc-number">3.</span> <span class="toc-text">考核内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#考试框架"><span class="toc-number">4.</span> <span class="toc-text">考试框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#备考资源"><span class="toc-number">5.</span> <span class="toc-text">备考资源</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插件导入"><span class="toc-number">1.</span> <span class="toc-text">插件导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#扫码功能实现页面"><span class="toc-number">2.</span> <span class="toc-text">扫码功能实现页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#扫码功能调用"><span class="toc-number">3.</span> <span class="toc-text">扫码功能调用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">4.</span> <span class="toc-text">实现效果</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -481,13 +437,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/10/Java RMI/" title="上一篇: Java RMI">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/08/ThinkPHP5如何自动生成API文档/" title="下一篇: ThinkPHP5如何自动生成API文档">
+            <a href="/2019/05/14/H5+APP实现联网和定位权限提醒并跳转至设置/" title="下一篇: H5+APP实现联网和定位权限提醒并跳转至设置">
                 <i class="fa fa-angle-right"></i>
             </a>
         

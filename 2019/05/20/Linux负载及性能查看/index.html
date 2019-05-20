@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>My New Style | Yang&#39;s Blog</title>
+  <title>Linux负载及性能查看 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="坚持每天写博客">
-<meta name="keywords" content="Life">
+  <meta name="description" content="linux 查看服务器系统资源和负载，以及性能监控">
+<meta name="keywords" content="Linux 管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Style">
-<meta property="og:url" content="https://xhyangdali.github.io/2018/07/30/My New Style/index.html">
+<meta property="og:title" content="Linux负载及性能查看">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/20/Linux负载及性能查看/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="坚持每天写博客">
+<meta property="og:description" content="linux 查看服务器系统资源和负载，以及性能监控">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T05:34:43.244Z">
+<meta property="og:updated_time" content="2019-05-20T07:49:09.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Style">
-<meta name="twitter:description" content="坚持每天写博客">
+<meta name="twitter:title" content="Linux负载及性能查看">
+<meta name="twitter:description" content="linux 查看服务器系统资源和负载，以及性能监控">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-My New Style" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux负载及性能查看" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/30/My New Style/" class="article-date">
-      <time datetime="2018-07-30T05:19:12.000Z" itemprop="datePublished">2018-07-30</time>
+      <a href="/2019/05/20/Linux负载及性能查看/" class="article-date">
+      <time datetime="2019-05-20T07:37:17.000Z" itemprop="datePublished">2019-05-20</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      My New Style
+      Linux负载及性能查看
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Life/">Life</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-管理/">Linux 管理</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,8 +276,24 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>坚持每天写博客<br><a id="more"></a></p>
-<h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><p>“只要有梦，就要坚持”这是我常常对自己说的一句话。无论追梦的过程多么痛苦，都要学会坚持，坚持自己的初衷，不放弃，坚持做自己，因为在这个过程中，我会遇见另一个更好的自己。</p>
+        <p>linux 查看服务器系统资源和负载，以及性能监控<br><a id="more"></a></p>
+<h1 id="查看磁盘"><a href="#查看磁盘" class="headerlink" title="查看磁盘"></a>查看磁盘</h1><p>df -h</p>
+<h1 id="查看内存大小"><a href="#查看内存大小" class="headerlink" title="查看内存大小"></a>查看内存大小</h1><p>free [-m|g]#按MB,GB显示内存</p>
+<h1 id="查看每个进程的情况"><a href="#查看每个进程的情况" class="headerlink" title="查看每个进程的情况"></a>查看每个进程的情况</h1><p>cat /proc/5346/status PID</p>
+<h1 id="查看负载"><a href="#查看负载" class="headerlink" title="查看负载"></a>查看负载</h1><p>uptime</p>
+<h1 id="查看系统整体状态"><a href="#查看系统整体状态" class="headerlink" title="查看系统整体状态"></a>查看系统整体状态</h1><p>top</p>
+<h1 id="查看文件夹和文件大小"><a href="#查看文件夹和文件大小" class="headerlink" title="查看文件夹和文件大小"></a>查看文件夹和文件大小</h1><p>du -h –max-depth=0 dm #查看dm目录大小</p>
+<p>du -h –max-depth=1 dm #查看dm目录大小，以及dm各文件文件夹的大小</p>
+<p>du -h –max-depth=0 #查看当前文件夹大小</p>
+<h1 id="Linux负载及性能查看"><a href="#Linux负载及性能查看" class="headerlink" title="Linux负载及性能查看"></a>Linux负载及性能查看</h1><h2 id="查看物理cpu个数"><a href="#查看物理cpu个数" class="headerlink" title="查看物理cpu个数"></a>查看物理cpu个数</h2><p>cat /proc/cpuinfo |grep “physical id”|sort|uniq|wc -l</p>
+<h2 id="查看每个物理cpu中的core个数"><a href="#查看每个物理cpu中的core个数" class="headerlink" title="查看每个物理cpu中的core个数"></a>查看每个物理cpu中的core个数</h2><p>cat /proc/cpuinfo |grep “cpu cores”|wc -l</p>
+<h2 id="逻辑cpu的个数"><a href="#逻辑cpu的个数" class="headerlink" title="逻辑cpu的个数"></a>逻辑cpu的个数</h2><p>cat /proc/cpuinfo |grep “processor”|wc -l –物理cpu个数*核数=逻辑cpu个数（不支持超线程技术的情况下）</p>
+<h1 id="内存查看"><a href="#内存查看" class="headerlink" title="内存查看"></a>内存查看</h1><h2 id="查看内存使用情况"><a href="#查看内存使用情况" class="headerlink" title="查看内存使用情况"></a>查看内存使用情况</h2><p>free -m</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="查看内核版本号："><a href="#查看内核版本号：" class="headerlink" title="查看内核版本号："></a>查看内核版本号：</h3><p>uname -a 简化命令：uname -r</p>
+<h3 id="查看系统是32位还是64位的："><a href="#查看系统是32位还是64位的：" class="headerlink" title="查看系统是32位还是64位的："></a>查看系统是32位还是64位的：</h3><p>file /sbin/init</p>
+<h3 id="查看发行版："><a href="#查看发行版：" class="headerlink" title="查看发行版："></a>查看发行版：</h3><p>cat /etc/issue  或lsb_release -a</p>
+<h3 id="查看系统已载入的相关模块："><a href="#查看系统已载入的相关模块：" class="headerlink" title="查看系统已载入的相关模块："></a>查看系统已载入的相关模块：</h3><p>lsmod</p>
+<h3 id="查看pci设置："><a href="#查看pci设置：" class="headerlink" title="查看pci设置："></a>查看pci设置：</h3><p>lspci</p>
 
       
       
@@ -333,13 +349,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/07/30/My New Style/">My New Style</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/20/Linux负载及性能查看/">Linux负载及性能查看</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2018年07月30日 - 13时19分</p>
-        <p><span>最后更新:</span>2018年07月30日 - 13时34分</p>
+        <p><span>发布时间:</span>2019年05月20日 - 15时37分</p>
+        <p><span>最后更新:</span>2019年05月20日 - 15时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/07/30/My New Style/" title="My New Style">https://xhyangdali.github.io/2018/07/30/My New Style/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2018/07/30/My New Style/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/20/Linux负载及性能查看/" title="Linux负载及性能查看">https://xhyangdali.github.io/2019/05/20/Linux负载及性能查看/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/20/Linux负载及性能查看/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -352,18 +368,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/07/30/百度地图和高德地图坐标系的互相转换/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          百度地图和高德地图坐标系的互相转换
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/13/对自己好一些/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">对自己好一些</div>
+    <a href="/2019/05/17/Hive和HBase的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hive和HBase的区别</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -374,7 +381,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#坚持"><span class="toc-number">1.</span> <span class="toc-text">坚持</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#查看磁盘"><span class="toc-number">1.</span> <span class="toc-text">查看磁盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看内存大小"><span class="toc-number">2.</span> <span class="toc-text">查看内存大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看每个进程的情况"><span class="toc-number">3.</span> <span class="toc-text">查看每个进程的情况</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看负载"><span class="toc-number">4.</span> <span class="toc-text">查看负载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看系统整体状态"><span class="toc-number">5.</span> <span class="toc-text">查看系统整体状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看文件夹和文件大小"><span class="toc-number">6.</span> <span class="toc-text">查看文件夹和文件大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux负载及性能查看"><span class="toc-number">7.</span> <span class="toc-text">Linux负载及性能查看</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看物理cpu个数"><span class="toc-number">7.1.</span> <span class="toc-text">查看物理cpu个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看每个物理cpu中的core个数"><span class="toc-number">7.2.</span> <span class="toc-text">查看每个物理cpu中的core个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑cpu的个数"><span class="toc-number">7.3.</span> <span class="toc-text">逻辑cpu的个数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内存查看"><span class="toc-number">8.</span> <span class="toc-text">内存查看</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看内存使用情况"><span class="toc-number">8.1.</span> <span class="toc-text">查看内存使用情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">8.2.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查看内核版本号："><span class="toc-number">8.2.1.</span> <span class="toc-text">查看内核版本号：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看系统是32位还是64位的："><span class="toc-number">8.2.2.</span> <span class="toc-text">查看系统是32位还是64位的：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看发行版："><span class="toc-number">8.2.3.</span> <span class="toc-text">查看发行版：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看系统已载入的相关模块："><span class="toc-number">8.2.4.</span> <span class="toc-text">查看系统已载入的相关模块：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看pci设置："><span class="toc-number">8.2.5.</span> <span class="toc-text">查看pci设置：</span></a></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -440,13 +447,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/07/30/百度地图和高德地图坐标系的互相转换/" title="上一篇: 百度地图和高德地图坐标系的互相转换">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/02/13/对自己好一些/" title="下一篇: 对自己好一些">
+            <a href="/2019/05/17/Hive和HBase的区别/" title="下一篇: Hive和HBase的区别">
                 <i class="fa fa-angle-right"></i>
             </a>
         

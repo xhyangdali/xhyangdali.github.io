@@ -3,20 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hive和HBase的区别 | Yang&#39;s Blog</title>
+  <title>Hadoop部署之一 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在学习大数据的时候常会遇到使用Hive或HBase数据仓库，究竟他们有什么区别呢？">
-<meta name="keywords" content="Hive HBase">
+  <meta name="description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
+<meta name="keywords" content="hadoop 配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive和HBase的区别">
-<meta property="og:url" content="https://xhyangdali.github.io/2019/05/17/Hive和HBase的区别/index.html">
+<meta property="og:title" content="Hadoop部署之一">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="在学习大数据的时候常会遇到使用Hive或HBase数据仓库，究竟他们有什么区别呢？">
+<meta property="og:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T07:39:39.531Z">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/2.png">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/3.png">
+<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/4.png">
+<meta property="og:updated_time" content="2019-05-23T02:33:00.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive和HBase的区别">
-<meta name="twitter:description" content="在学习大数据的时候常会遇到使用Hive或HBase数据仓库，究竟他们有什么区别呢？">
+<meta name="twitter:title" content="Hadoop部署之一">
+<meta name="twitter:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
+<meta name="twitter:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +239,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Hive和HBase的区别" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hadoop部署之一" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/17/Hive和HBase的区别/" class="article-date">
-      <time datetime="2019-05-17T07:23:41.000Z" itemprop="datePublished">2019-05-17</time>
+      <a href="/2019/05/23/Hadoop部署之一/" class="article-date">
+      <time datetime="2019-05-23T01:20:23.000Z" itemprop="datePublished">2019-05-23</time>
 </a>
     </div>
   
@@ -251,7 +256,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hive和HBase的区别
+      Hadoop部署之一
     </h1>
   
 
@@ -266,7 +271,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hive-HBase/">Hive HBase</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop-配置/">hadoop 配置</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,20 +281,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在学习大数据的时候常会遇到使用Hive或HBase数据仓库，究竟他们有什么区别呢？<br><a id="more"></a></p>
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p>Apache Hive是一个构建在Hadoop基础设施之上的数据仓库。通过Hive可以使用HQL语言查询存放在HDFS上的数据。HQL是一种类SQL语言，这种语言最终被转化为Map/Reduce.虽然Hive提供了SQL查询功能，但是Hive不能够进行交互查询–因为它只能够在Haoop上批量的执行Hadoop。</p>
-<p>Apache HBase是一种Key/Value系统，它运行在HDFS之上。和Hive不一样，Hbase的能够在它的数据库上实时运行，而不是运行MapReduce任务。Hive被分区为表格，表格又被进一步分割为列簇。列簇必须使用schema定义，列簇将某一类型列集合起来（列不要求schema定义）。例如，“message”列簇可能包含：“to”, ”from” “date”, “subject”, 和”body”. 每一个 key/value对在Hbase中被定义为一个cell，每一个key由row-key，列簇、列和时间戳。在Hbase中，行是key/value映射的集合，这个映射通过row-key来唯一标识。Hbase利用Hadoop的基础设施，可以利用通用的设备进行水平的扩展。</p>
-<ul>
-<li>MapReduce是hadoop的核心组件之一，hadoop要实现分布式需要包括两部分，一部分是分布式文件系统hdfs，一部分是分布式计算框架mapreduce，缺一不可，也就是说，可以通过mapreduce很容易在hadoop平台上进行分布式的计算编程。</li>
+        <p>Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。<br><a id="more"></a></p>
+<h1 id="HDFS框架"><a href="#HDFS框架" class="headerlink" title="HDFS框架"></a>HDFS框架</h1><p><img src="/2019/05/23/Hadoop部署之一/1.png" alt="HDFS框架"></p>
+<h1 id="MapReduce架构"><a href="#MapReduce架构" class="headerlink" title="MapReduce架构"></a>MapReduce架构</h1><p><img src="/2019/05/23/Hadoop部署之一/2.png" alt="MapReduce架构"></p>
+<h1 id="Hadoop下载安装"><a href="#Hadoop下载安装" class="headerlink" title="Hadoop下载安装"></a>Hadoop下载安装</h1><h2 id="Hadoop下载"><a href="#Hadoop下载" class="headerlink" title="Hadoop下载"></a>Hadoop下载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="Hadoop安装"><a href="#Hadoop安装" class="headerlink" title="Hadoop安装"></a>Hadoop安装</h2><p>由于Hadoop的部署需要java JDK 的支持，所以需要先安装Java JDK 参考 <a href="/2019/05/17/日志分析系统(zookeeper+flume+kafka)之实时接收数据/" title="日志分析系统(zookeeper+flume+kafka)之实时接收数据">日志分析系统(zookeeper+flume+kafka)之实时接收数据</a>  里边有涉及到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/</span><br><span class="line">tar zxvf ./hadoop-3.2.0.tar.gz</span><br><span class="line">mv ./hadoop-3.2.0 ./hadoop</span><br></pre></td></tr></table></figure></p>
+<h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>设置JAVA的环境变量，JAVA_HOME是JDK的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 设置JAVA的环境变量，JAVA_HOME是JDK的位置</span><br><span class="line">vi /etc/profile</span><br><span class="line">export HADOOP_HOME=/usr/local/hadoop</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin	</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk </span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"># 设置生效</span><br><span class="line">source /etc/profile</span><br><span class="line"># 设置Hadoop的JAVA_HOME</span><br><span class="line">vi etc/hadoop/hadoop-env.sh</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.91-2.6.2.3.el7.x86_64</span><br></pre></td></tr></table></figure></p>
+<h1 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h1><h2 id="需要配置的文件"><a href="#需要配置的文件" class="headerlink" title="需要配置的文件"></a>需要配置的文件</h2><ul>
+<li>hadoop/etc/hadoop/hadoop-env.sh </li>
+<li>hadoop/etc/hadoop/yarn-env.sh </li>
+<li>hadoop/etc/hadoop/core-site.xml </li>
+<li>hadoop/etc/hadoop/hdfs-site.xml </li>
+<li>hadoop/etc/hadoop/mapred-site.xml </li>
+<li>hadoop/etc/hadoop/yarn-site.xml</li>
 </ul>
-<h1 id="各自的特点"><a href="#各自的特点" class="headerlink" title="各自的特点"></a>各自的特点</h1><p>Hive帮助熟悉SQL的人运行MapReduce任务。因为它是JDBC兼容的，同时，它也能够和现存的SQL工具整合在一起。运行Hive查询会花费很长时间，因为它会默认遍历表中所有的数据。虽然有这样的缺点，一次遍历的数据量可以通过Hive的分区机制来控制。分区允许在数据集上运行过滤查询，这些数据集存储在不同的文件夹内，查询的时候只遍历指定文件夹（分区）中的数据。这种机制可以用来，例如，只处理在某一个时间范围内的文件，只要这些文件名中包括了时间格式。</p>
-<p>HBase通过存储key/value来工作。它支持四种主要的操作：增加或者更新行，查看一个范围内的cell，获取指定的行，删除指定的行、列或者是列的版本。版本信息用来获取历史数据（每一行的历史数据可以被删除，然后通过Hbase compactions就可以释放出空间）。虽然HBase包括表格，但是schema仅仅被表格和列簇所要求，列不需要schema。Hbase的表格包括增加/计数功能。</p>
-<h1 id="各自的劣势"><a href="#各自的劣势" class="headerlink" title="各自的劣势"></a>各自的劣势</h1><p>Hive目前不支持更新操作。另外，由于hive在hadoop上运行批量操作，它需要花费很长的时间，通常是几分钟到几个小时才可以获取到查询的结果。Hive必须提供预先定义好的schema将文件和目录映射到列，并且Hive与ACID不兼容</p>
-<p>HBase查询是通过特定的语言来编写的，这种语言需要重新学习。类SQL的功能可以通过Apache Phonenix实现，但这是以必须提供schema为代价的。另外，Hbase也并不是兼容所有的ACID特性，虽然它支持某些特性。最后但不是最重要的–为了运行Hbase，Zookeeper是必须的，zookeeper是一个用来进行分布式协调的服务，这些服务包括配置服务，维护元信息和命名空间服务。</p>
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>Hive适合用来对一段时间内的数据进行分析查询，例如，用来计算趋势或者网站的日志。Hive不应该用来进行实时的查询。因为它需要很长时间才可以返回结果。</p>
-<p>Hbase非常适合用来进行大数据的实时查询。Facebook用Hbase进行消息和实时的分析。它也可以用来统计Facebook的连接数</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>Hive和Hbase是两种基于Hadoop的不同技术–Hive是一种类SQL的引擎，并且运行MapReduce任务，Hbase是一种在Hadoop之上的NoSQL 的Key/vale数据库。当然，这两种工具是可以同时使用的。就像用baidu来搜索，用新浪微博进行社交一样，Hive可以用来进行统计查询，HBase可以用来进行实时查询，数据也可以从Hive写到Hbase，设置再从Hbase写回Hive。</p>
-
+<h2 id="core-site-xml配置"><a href="#core-site-xml配置" class="headerlink" title="core-site.xml配置"></a>core-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;name&gt;fs.default.name&lt;/name&gt;</span><br><span class="line">&lt;value&gt;hdfs://10.1.1.35:9000&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="hdfs-site-xml配置"><a href="#hdfs-site-xml配置" class="headerlink" title="hdfs-site.xml配置"></a>hdfs-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:50070&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="mapred-site-xml配置"><a href="#mapred-site-xml配置" class="headerlink" title="mapred-site.xml配置"></a>mapred-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.job.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50030&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.task.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50060&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="hadoop-env-sh配置"><a href="#hadoop-env-sh配置" class="headerlink" title="hadoop-env.sh配置"></a>hadoop-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
+<h2 id="yarn-site-xml配置"><a href="#yarn-site-xml配置" class="headerlink" title="yarn-site.xml配置"></a>yarn-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.resourcemanager.webapp.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:8099&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;这个地址是mr管理界面的&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="yarn-env-sh配置"><a href="#yarn-env-sh配置" class="headerlink" title="yarn-env.sh配置"></a>yarn-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="格式换文件系统"><a href="#格式换文件系统" class="headerlink" title="格式换文件系统"></a>格式换文件系统</h2><p>hdfs namenode -format</p>
+<h2 id="启动节点"><a href="#启动节点" class="headerlink" title="启动节点"></a>启动节点</h2><p>sbin/start-dfs.sh</p>
+<h2 id="hadoop文件管理"><a href="#hadoop文件管理" class="headerlink" title="hadoop文件管理"></a>hadoop文件管理</h2><p><img src="/2019/05/23/Hadoop部署之一/3.png" alt="hadoop资源管理"></p>
+<ul>
+<li>浏览器打开 <a href="http://10.1.1.35:50070/" target="_blank" rel="noopener">http://10.1.1.35:50070/</a></li>
+</ul>
+<h2 id="hadoop-资源管理"><a href="#hadoop-资源管理" class="headerlink" title="hadoop 资源管理"></a>hadoop 资源管理</h2><p><img src="/2019/05/23/Hadoop部署之一/4.png" alt="hadoop资源管理"></p>
+<ul>
+<li>浏览器打开 <a href="http://10.1.1.35:8099/cluster" target="_blank" rel="noopener">http://10.1.1.35:8099/cluster</a></li>
+</ul>
+<h2 id="文件测试-文件wordcount"><a href="#文件测试-文件wordcount" class="headerlink" title="文件测试+文件wordcount"></a>文件测试+文件wordcount</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 上传</span><br><span class="line">hadoop fs -put /home/wwwlogs/access.log hdfs://10.1.1.35:9000/</span><br><span class="line"># 删除 </span><br><span class="line">hadoop  fs  -rm  hdfs://localhost:9000/access.log</span><br><span class="line"># 计数测试</span><br><span class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.0.jar wordcount /home/wwwlogs/access.log /myorder/</span><br><span class="line"># 结果检查</span><br><span class="line">hadoop fs -ls /myorder</span><br><span class="line">hadoop fs -cat /myorder/part-r-00000</span><br><span class="line"># 结果</span><br><span class="line">[30/Apr/2019:13:33:47   45</span><br><span class="line">[30/Apr/2019:13:33:48   3</span><br><span class="line">[30/Apr/2019:13:34:18   47</span><br><span class="line">[30/Apr/2019:13:34:27   4</span><br><span class="line">[30/Apr/2019:13:34:28   37</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -344,13 +366,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/17/Hive和HBase的区别/">Hive和HBase的区别</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/23/Hadoop部署之一/">Hadoop部署之一</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2019年05月17日 - 15时23分</p>
-        <p><span>最后更新:</span>2019年05月17日 - 15时39分</p>
+        <p><span>发布时间:</span>2019年05月23日 - 09时20分</p>
+        <p><span>最后更新:</span>2019年05月23日 - 10时33分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/17/Hive和HBase的区别/" title="Hive和HBase的区别">https://xhyangdali.github.io/2019/05/17/Hive和HBase的区别/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/17/Hive和HBase的区别/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/23/Hadoop部署之一/" title="Hadoop部署之一">https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -363,18 +385,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/20/Linux负载及性能查看/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Linux负载及性能查看
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/17/日志分析系统(zookeeper+flume+kafka)之实时接收数据/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">日志分析系统(zookeeper+flume+kafka)之实时接收数据</div>
+    <a href="/2019/05/21/日志分析系统(flume)之数据加密/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日志分析系统(flume)之数据加密</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -385,7 +398,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#区别"><span class="toc-number">1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#各自的特点"><span class="toc-number">2.</span> <span class="toc-text">各自的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#各自的劣势"><span class="toc-number">3.</span> <span class="toc-text">各自的劣势</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#应用场景"><span class="toc-number">4.</span> <span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number">5.</span> <span class="toc-text">结语</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDFS框架"><span class="toc-number">1.</span> <span class="toc-text">HDFS框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MapReduce架构"><span class="toc-number">2.</span> <span class="toc-text">MapReduce架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop下载安装"><span class="toc-number">3.</span> <span class="toc-text">Hadoop下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop下载"><span class="toc-number">3.1.</span> <span class="toc-text">Hadoop下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop安装"><span class="toc-number">3.2.</span> <span class="toc-text">Hadoop安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量设置"><span class="toc-number">3.3.</span> <span class="toc-text">环境变量设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop配置"><span class="toc-number">4.</span> <span class="toc-text">Hadoop配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要配置的文件"><span class="toc-number">4.1.</span> <span class="toc-text">需要配置的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#core-site-xml配置"><span class="toc-number">4.2.</span> <span class="toc-text">core-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs-site-xml配置"><span class="toc-number">4.3.</span> <span class="toc-text">hdfs-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mapred-site-xml配置"><span class="toc-number">4.4.</span> <span class="toc-text">mapred-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-env-sh配置"><span class="toc-number">4.5.</span> <span class="toc-text">hadoop-env.sh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-site-xml配置"><span class="toc-number">4.6.</span> <span class="toc-text">yarn-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-env-sh配置"><span class="toc-number">4.7.</span> <span class="toc-text">yarn-env.sh配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">5.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#格式换文件系统"><span class="toc-number">5.1.</span> <span class="toc-text">格式换文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动节点"><span class="toc-number">5.2.</span> <span class="toc-text">启动节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop文件管理"><span class="toc-number">5.3.</span> <span class="toc-text">hadoop文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-资源管理"><span class="toc-number">5.4.</span> <span class="toc-text">hadoop 资源管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件测试-文件wordcount"><span class="toc-number">5.5.</span> <span class="toc-text">文件测试+文件wordcount</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -451,13 +464,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/20/Linux负载及性能查看/" title="上一篇: Linux负载及性能查看">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/17/日志分析系统(zookeeper+flume+kafka)之实时接收数据/" title="下一篇: 日志分析系统(zookeeper+flume+kafka)之实时接收数据">
+            <a href="/2019/05/21/日志分析系统(flume)之数据加密/" title="下一篇: 日志分析系统(flume)之数据加密">
                 <i class="fa fa-angle-right"></i>
             </a>
         

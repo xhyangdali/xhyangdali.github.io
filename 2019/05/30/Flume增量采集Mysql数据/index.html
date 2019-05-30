@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>程序员的三十岁 | Yang&#39;s Blog</title>
+  <title>Flume增量采集Mysql数据 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="30岁程序员干到30岁，好不容易从码奴混到了白领，却再也干不动了，还时时面临失业的危险。30岁，是一个程序员伤不起的年龄。明天，何去何从？">
-<meta name="keywords" content="Life Future Articles">
+  <meta name="description" content="由于业务系统使用的数据库是Mysql，需要对业务进行大数据分析这就要求我们实时采集MySQL的数据。使用flume采集MySQL数据配置较简单，下面是配置的过程。">
+<meta name="keywords" content="flume mysql 数据采集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序员的三十岁">
-<meta property="og:url" content="https://xhyangdali.github.io/2018/01/02/程序员的三十岁/index.html">
+<meta property="og:title" content="Flume增量采集Mysql数据">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/05/30/Flume增量采集Mysql数据/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="30岁程序员干到30岁，好不容易从码奴混到了白领，却再也干不动了，还时时面临失业的危险。30岁，是一个程序员伤不起的年龄。明天，何去何从？">
+<meta property="og:description" content="由于业务系统使用的数据库是Mysql，需要对业务进行大数据分析这就要求我们实时采集MySQL的数据。使用flume采集MySQL数据配置较简单，下面是配置的过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-09T07:18:21.021Z">
+<meta property="og:updated_time" content="2019-05-30T03:00:21.516Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序员的三十岁">
-<meta name="twitter:description" content="30岁程序员干到30岁，好不容易从码奴混到了白领，却再也干不动了，还时时面临失业的危险。30岁，是一个程序员伤不起的年龄。明天，何去何从？">
+<meta name="twitter:title" content="Flume增量采集Mysql数据">
+<meta name="twitter:description" content="由于业务系统使用的数据库是Mysql，需要对业务进行大数据分析这就要求我们实时采集MySQL的数据。使用flume采集MySQL数据配置较简单，下面是配置的过程。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-程序员的三十岁" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Flume增量采集Mysql数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/01/02/程序员的三十岁/" class="article-date">
-      <time datetime="2018-01-02T05:54:14.000Z" itemprop="datePublished">2018-01-02</time>
+      <a href="/2019/05/30/Flume增量采集Mysql数据/" class="article-date">
+      <time datetime="2019-05-30T02:37:01.000Z" itemprop="datePublished">2019-05-30</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      程序员的三十岁
+      Flume增量采集Mysql数据
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Life/">Life</a>
+    <a class="article-category-link" href="/categories/大数据/">大数据</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life-Future-Articles/">Life Future Articles</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flume-mysql-数据采集/">flume mysql 数据采集</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,36 +276,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="30岁"><a href="#30岁" class="headerlink" title="30岁"></a>30岁</h2><p>程序员干到30岁，好不容易从码奴混到了白领，却再也干不动了，还时时面临失业的危险。30岁，是一个程序员伤不起的年龄。明天，何去何从？<br><a id="more"></a></p>
-<h2 id="30岁现象"><a href="#30岁现象" class="headerlink" title="30岁现象"></a>30岁现象</h2><p>在官场上，曾经有一个59岁现象，就是官员们会在59岁时，会使劲捞上一把。很明显嘛，权力过期作废，再不捞就要退休了，没有机会了。</p>
-<p>在程序员的圈子里，也有一个30岁现象。当然，如果你有铁饭碗，比如在国企或政府机关，那你是无法理解底层劳动人民的感受的。同时也要恭喜你成为体制内的一员，可以一直干到退休无忧。</p>
-<p>30岁现象人人都明白，但要给出一个定义并不容易。列举几个表现，也许你会觉得心有戚戚焉。</p>
-<p>面临职业瓶颈，程序写不动，上升又困难。</p>
-<p>薪水较高，加班变少，后浪追前浪，面临失业压力；生活压力剧增，不敢跳槽；</p>
-<p>招聘程序员年龄限制在30岁以下成为行业潜规则，跳槽困难。</p>
-<p>30岁现象和59岁现象貌似不搭边，其实都出于同样的原因：价值贬值。官员老爷在任就像皇帝，一旦退休，就成为了平民百姓，贬值那是自然的。<br>而程序员也一样， 所谓三十而立，一旦到了30岁左右，由于面临结婚生子，一方面需要高薪抚养家庭，另一方面却无法像以前那样全身心投入到工作，性价比急剧下降；<br>与此同时， 大批廉价的新手涌入，他们往往还使用最新的技术，老一辈程序员只能慢慢的靠边站了。</p>
-<h2 id="不可替代性"><a href="#不可替代性" class="headerlink" title="不可替代性"></a>不可替代性</h2><p>30岁现象产生，只能程序员自身身上找原因。</p>
-<p>当然我们也可以产业、从社会、从政府、从制度等多方面进行分析，发现不足，这些分析未必没有道理，但是肯定没有用，因为我们无法改变。<br>所谓“命苦不能怪政府，命背不能怪社会”，从外部找原因，只会让我们满腹牢骚，整天觉得自己生不逢时，苦闷不堪。</p>
-<p>从自身找原因，试着问自己几个问题：“为什么我的性价比以下降？老板为什么要请我，给我高工资呢？一个人有价值是由什么决定的呢？”</p>
-<p>你也许可以列出很长很长的答案，但我想应该都可以浓缩为一句话：“一个的价值是由他的不可替代性决定的”。不可替代性可以理解为，为了替代你老板需要付出的代价。</p>
-<p>因为你的可替代性高，所以性价比下降。反之，因为你不可替代性高，所以老板会给你开高工资。不是这样的吗？</p>
-<p>有一则小故事：</p>
-<p>技师退休时告诫自己的徒弟：“少说话，多做事。”</p>
-<p>十年后徒弟也成了技师，他找到师傅，苦着脸说：“师傅，我一直都按您的教导做，只知埋头苦干，可那些比我技术差的都升职了、加薪了，我还是拿着过去的工资。”</p>
-<h2 id="出路在哪里"><a href="#出路在哪里" class="headerlink" title="出路在哪里"></a>出路在哪里</h2><p>那程序员到了30岁，怎样提高自己的不可替代性呢？我们打算做一辈子程序员吗？敢问路在何方？</p>
-<p>作为一个过来人、一个资深程序员，我觉得有几个方向可以选择：</p>
-<h3 id="成为技术大拿"><a href="#成为技术大拿" class="headerlink" title="成为技术大拿"></a>成为技术大拿</h3><p>其实，做一辈子程序员并没有什么问题，重要的是，你必须成为一个不可替代的程序员，也就是说，你要成为技术大拿，能够解决普通程序员所不能解决的问题。技术大拿有两个版本：</p>
-<p>一 是程序员加强版。你仍然是一个程序员，但你是一个很牛的程序员，凭借多年的积累，你在知识广度和深度方面均已不是等闲之辈。从汇编到java，你样样精 通。<br>你在意数据结构和算法，对系统的优化有独到见解，对设计模式如 数家珍，你还有完备的工具箱和自己的专用类库。<br>其实，加强版程序员有非常独特的价值，可 惜的是，在现实中却很少见，因为对任何一个公司而言，人才总是很稀缺的。<br>老板的眼睛是雪亮的，他怎么会对你这种技术大牛视而不见呢，在你还没有成为真正的 大拿之前，早已经被任命为系统架构师、项目经理或者更高的职位了。<br>因此，你想守住自己的一亩三分地，悠闲的做自己的大拿，往往是不可能的。</p>
-<p>二 是程序员升级版。虽然你的内在仍然是一个程序员，但你的职位已经升级了，你成为了系统分析师或系统架构师。<br>这是非常自然和现实的选择。程序员与系统分析师 或架构师之间并有鸿沟，只需一步而已，你就可以从崎岖山路驶向宽阔的大马路。<br>但这一步却并不容易，需要几年时间不断思考、学习、实践，才能化蛹成蝶。</p>
-<h3 id="成为行业专家"><a href="#成为行业专家" class="headerlink" title="成为行业专家"></a>成为行业专家</h3><p>行业专家也是一个公司不可缺少的角色，他们对公司的行业知识、业务流程和细节了如指掌。行业专家一般并不是从外部招聘的一个只懂业务、不懂技术的超人，而往 往是从程序员经过多年的摸爬滚打成长起来的。<br>作为从程序员成长起来的行业专家，你往往还肩负系统分析师之职。在公司里，对业务有一般了解的人很多， 但专 家级别的往往很少，为了后30年的职业生涯，你必须成为专家。</p>
-<h3 id="朝管理方向发展"><a href="#朝管理方向发展" class="headerlink" title="朝管理方向发展"></a>朝管理方向发展</h3><p>向管理方向发展的第一步，一般是被任命为项目经理。在大部分IT公司里， 项目经理是最小的管理岗位了，可能你不会觉得有太多惊喜，工资也没有大的提升，但这个转变，可以说会成为你一生中最重要的转变之一。</p>
-<p>不要小看了项目经理。有人说，项目经理是一个古老的职业。也人有人说，21世纪是项目管理的世纪。事实上，从人类有组织以来，就一直有项目管理，以前的项目 经理可能是部落首领，一次集体打猎、一次攻城拔寨，都可以视为一个项目。<br>项目管理的知识可以应用到我们生活的方方面面，大至登月计划的实施，小至家庭聚会 的组织，都离不开项目管理。</p>
-<p>一个优秀的项目经理，不仅需要高智商，还需要高情商。可以不夸张的说，如果你能胜任项目管理，你就可以胜任战术层的所有管理岗位，甚至你有家庭生活质量，也会提高到新层次。</p>
-<p>然而，要成为一名优秀的项目经理，并不是一件容易的事情。可以说，需要一定的天分，有些人无师自通，有些人却永远也学不会。<br>程序员属于高智商人群，情商却往往存在不足，这注定了只有少数程序员能够成长为项目经理，成为优秀的项目经理，则非常稀少了。</p>
-<p>如果你觉得这几方面都合适，那你还有几条出路：</p>
-<p>一是塌塌实实混日子。</p>
-<p>说老实话，做老实人，办老实事，拿老实的工资，这种员工公司也是非常需要的，一般不会遭遇炒鱿鱼的命运；二是转行或者创业。</p>
-<p>因为这个行业已经不再适合你，已经没有更大的发展前途，只能转行。如果可以转行，未必是坏事，也许在新的环境中，可以激发出更强的能量，创造出一番事业来。 至于创业，那就更具有挑战性了，建议你在创业之前，已经成为了一名优秀的项目经理。<br>试想，如果转不动一个项目，如何能转动一个公司？</p>
+        <p>由于业务系统使用的数据库是Mysql，需要对业务进行大数据分析这就要求我们实时采集MySQL的数据。使用flume采集MySQL数据配置较简单，下面是配置的过程。<br><a id="more"></a></p>
+<h1 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h1><h2 id="需要的插件"><a href="#需要的插件" class="headerlink" title="需要的插件"></a>需要的插件</h2><ul>
+<li>mysql-connector-java-5.1.46-bin.jar</li>
+<li>flume-ng-sql-source-1.4.1.jar</li>
+<li>这两个软件需要拷贝到  /usr/local/flume/lib</li>
+</ul>
+<h1 id="flume配置"><a href="#flume配置" class="headerlink" title="flume配置"></a>flume配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">agent.sources.s1.type=org.keedio.flume.source.SQLSource</span><br><span class="line">agent.sources.s1.hibernate.connection.url=jdbc:mysql://localhost:3306/tickapi?useOldAliasMetadataBehavior=true</span><br><span class="line">agent.sources.s1.hibernate.connection.user=root</span><br><span class="line">agent.sources.s1.hibernate.connection.password=123456</span><br><span class="line">agent.sources.s1.hibernate.connection.autocommit=true</span><br><span class="line">agent.sources.s1.hibernate.connection.driver_calss=com.mysql.jdbc.Driver</span><br><span class="line">agent.sources.s1.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect</span><br><span class="line">agent.sources.s1.hibernate.provider_class=org.hibernate.connection.C3P0ConnectionProvider</span><br><span class="line">agent.sources.s1.run.query.delay=5000</span><br><span class="line"></span><br><span class="line"># 增量配置</span><br><span class="line"># agent.sources.s1.table=lt_api_getallstops</span><br><span class="line"># agent.sources.s1.columns.to.select=*</span><br><span class="line"># agent.sources.s1.incremental.column.name=id</span><br><span class="line"># agent.sources.s1.incremental.value=0</span><br><span class="line">agent.sources.s1.custom.query=select * from lt_api_getallstops order by id desc</span><br><span class="line"># where id &gt; $@$ order by id 注意加了此段SQL会报错：SQL语句异常。</span><br><span class="line">agent.sources.s1.start.from=0  #增量列的初始值</span><br><span class="line">agent.sources.s1.status.file.path=/home/flume</span><br><span class="line">agent.sources.s1.status.file.name=sql-source.status</span><br></pre></td></tr></table></figure>
+<h1 id="采集到的效果"><a href="#采集到的效果" class="headerlink" title="采集到的效果"></a>采集到的效果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># kafka发送的数据</span><br><span class="line">&quot;1121&quot;,&quot;大理州&quot;,&quot;99999999&quot;,&quot;CES&quot;,&quot;测试&quot;,&quot;&quot;,&quot;7214&quot;,&quot;大理兴盛汽车客运站&quot;,&quot;826f023cfa2a50feb92a958bcb16cdf0&quot;</span><br><span class="line">&quot;1120&quot;,&quot;大理州&quot;,&quot;75010101&quot;,&quot;BS&quot;,&quot;保山&quot;,&quot;&quot;,&quot;7214&quot;,&quot;大理兴盛汽车客运站&quot;,&quot;826f023cfa2a50feb92a958bcb16cdf0&quot;</span><br><span class="line">&quot;1119&quot;,&quot;大理州&quot;,&quot;71010101&quot;,&quot;KM&quot;,&quot;昆明&quot;,&quot;&quot;,&quot;7213&quot;,&quot;大理汽车客运北站&quot;,&quot;826f023cfa2a50feb92a958bcb16cdf0&quot;</span><br><span class="line">&quot;1118&quot;,&quot;昆明西站&quot;,&quot;4659&quot;,&quot;&quot;,&quot;保山&quot;,&quot;&quot;,&quot;71010101&quot;,&quot;昆明西部客运站&quot;,&quot;826f023cfa2a50feb92a958bcb16cdf0&quot;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -361,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/02/程序员的三十岁/">程序员的三十岁</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/30/Flume增量采集Mysql数据/">Flume增量采集Mysql数据</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2018年01月02日 - 13时54分</p>
-        <p><span>最后更新:</span>2019年05月09日 - 15时18分</p>
+        <p><span>发布时间:</span>2019年05月30日 - 10时37分</p>
+        <p><span>最后更新:</span>2019年05月30日 - 11时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/02/程序员的三十岁/" title="程序员的三十岁">https://xhyangdali.github.io/2018/01/02/程序员的三十岁/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2018/01/02/程序员的三十岁/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/30/Flume增量采集Mysql数据/" title="Flume增量采集Mysql数据">https://xhyangdali.github.io/2019/05/30/Flume增量采集Mysql数据/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/30/Flume增量采集Mysql数据/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -380,18 +358,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/01/11/使用PHPQRCode生成二维码/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          使用PHPQRCode生成二维码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/25/H5移动端页面常见兼容性问题记录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">H5移动端页面常见兼容性问题记录</div>
+    <a href="/2019/05/29/TP5日志Kafka接收Java正则解析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TP5日志Kafka接收Java正则解析</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -402,7 +371,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#30岁"><span class="toc-number">1.</span> <span class="toc-text">30岁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30岁现象"><span class="toc-number">2.</span> <span class="toc-text">30岁现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不可替代性"><span class="toc-number">3.</span> <span class="toc-text">不可替代性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出路在哪里"><span class="toc-number">4.</span> <span class="toc-text">出路在哪里</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#成为技术大拿"><span class="toc-number">4.1.</span> <span class="toc-text">成为技术大拿</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成为行业专家"><span class="toc-number">4.2.</span> <span class="toc-text">成为行业专家</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#朝管理方向发展"><span class="toc-number">4.3.</span> <span class="toc-text">朝管理方向发展</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插件下载"><span class="toc-number">1.</span> <span class="toc-text">插件下载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要的插件"><span class="toc-number">1.1.</span> <span class="toc-text">需要的插件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#flume配置"><span class="toc-number">2.</span> <span class="toc-text">flume配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#采集到的效果"><span class="toc-number">3.</span> <span class="toc-text">采集到的效果</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -468,13 +437,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/01/11/使用PHPQRCode生成二维码/" title="上一篇: 使用PHPQRCode生成二维码">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/12/25/H5移动端页面常见兼容性问题记录/" title="下一篇: H5移动端页面常见兼容性问题记录">
+            <a href="/2019/05/29/TP5日志Kafka接收Java正则解析/" title="下一篇: TP5日志Kafka接收Java正则解析">
                 <i class="fa fa-angle-right"></i>
             </a>
         

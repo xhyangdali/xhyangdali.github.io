@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>在 Hexo 中创建匹配主题的404页面 | Yang&#39;s Blog</title>
+  <title>java原生操作数据库 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="通常，对于绑定了顶级域名的 Hexo 博客来说，只需在所用主题的source文件夹下新建一个404.html文件，再生成部署到云端，即可生成博客404页面。但这种方法生成的页面是孤立的，下面介绍一种生成匹配主题的404页面的方法。">
-<meta name="keywords" content="Node.js">
+  <meta name="description" content="使用java代码操作oracle数据库需要下载oracle的jdbc连接桥，使用其连接操作。">
+<meta name="keywords" content="oracle Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Hexo 中创建匹配主题的404页面">
-<meta property="og:url" content="https://xhyangdali.github.io/2017/12/04/hexo-404-page/index.html">
+<meta property="og:title" content="java原生操作数据库">
+<meta property="og:url" content="https://xhyangdali.github.io/2019/06/14/java原生操作数据库/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="通常，对于绑定了顶级域名的 Hexo 博客来说，只需在所用主题的source文件夹下新建一个404.html文件，再生成部署到云端，即可生成博客404页面。但这种方法生成的页面是孤立的，下面介绍一种生成匹配主题的404页面的方法。">
+<meta property="og:description" content="使用java代码操作oracle数据库需要下载oracle的jdbc连接桥，使用其连接操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-04T07:40:47.333Z">
+<meta property="og:updated_time" content="2019-06-14T08:18:59.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Hexo 中创建匹配主题的404页面">
-<meta name="twitter:description" content="通常，对于绑定了顶级域名的 Hexo 博客来说，只需在所用主题的source文件夹下新建一个404.html文件，再生成部署到云端，即可生成博客404页面。但这种方法生成的页面是孤立的，下面介绍一种生成匹配主题的404页面的方法。">
+<meta name="twitter:title" content="java原生操作数据库">
+<meta name="twitter:description" content="使用java代码操作oracle数据库需要下载oracle的jdbc连接桥，使用其连接操作。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hexo-404-page" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java原生操作数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/04/hexo-404-page/" class="article-date">
-      <time datetime="2017-12-04T07:35:59.000Z" itemprop="datePublished">2017-12-04</time>
+      <a href="/2019/06/14/java原生操作数据库/" class="article-date">
+      <time datetime="2019-06-14T07:51:19.000Z" itemprop="datePublished">2019-06-14</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      在 Hexo 中创建匹配主题的404页面
+      java原生操作数据库
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/HEXO/">HEXO</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle-Java/">oracle Java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,25 +276,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　　通常，对于绑定了顶级域名的 Hexo 博客来说，只需在所用主题的<code>source</code>文件夹下新建一个<code>404.html</code>文件，再生成部署到云端，即可生成博客404页面。但这种方法生成的页面是孤立的，下面介绍一种生成匹配主题的404页面的方法。</p>
-<a id="more"></a>
-<h3 id="新建404页面"><a href="#新建404页面" class="headerlink" title="新建404页面"></a>新建404页面</h3><blockquote>
-<ol>
-<li>启动 Git Bash，进入 Hexo 所在文件夹，输入 <code>hexo new page 404</code> ;</li>
-<li>打开刚新建的页面文件，默认在 Hexo 文件夹根目录下 <code>/source/404/index.md</code>；</li>
-<li>在顶部插入一行，写上<code>permalink: /404</code>，这表示指定该页固定链接为 <code>http://&quot;主页&quot;/404.html</code></li>
-</ol>
-</blockquote>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="number">404</span> <span class="string">Not</span> <span class="string">Found：该页无法显示</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/404</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<h3 id="自定义页面样式"><a href="#自定义页面样式" class="headerlink" title="自定义页面样式"></a>自定义页面样式</h3><p>　　经过上面的设置后，404界面已生效，其编辑方式与一般文章无异。我们可以在.md文件正文中插入一些 CSS 样式，使得该页面与博客中的一般文章有所区别。下面是我个人为配合本博客主题所设置的一些样式，仅供参考，具体修改自行审查所用主题。</p>
-<blockquote>
-<p><a href="http://moxfive.xyz/举个404页面栗子" target="_blank" rel="noopener">http://moxfive.xyz/举个404页面栗子</a></p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">title: 404 Not Found：该页无法显示</span><br><span class="line">toc: false</span><br><span class="line">comments: false</span><br><span class="line">permalink: /404</span><br><span class="line">---</span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">	.article-header &#123;</span></span><br><span class="line"><span class="undefined">		padding: 0;</span></span><br><span class="line"><span class="undefined">		padding-top: 26px;</span></span><br><span class="line"><span class="undefined">		border-left: none;</span></span><br><span class="line"><span class="undefined">		text-align: center;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.article-header:hover &#123;</span></span><br><span class="line"><span class="undefined">		border-left: none;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.article-title &#123;</span></span><br><span class="line"><span class="undefined">		font-size: 2.1em;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	strong a &#123;</span></span><br><span class="line"><span class="undefined">		color: #747474;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.article-meta &#123;</span></span><br><span class="line"><span class="undefined">		display: none;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.share &#123;</span></span><br><span class="line"><span class="undefined">		display: none;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.ds-meta &#123;</span></span><br><span class="line"><span class="undefined">		display: none;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.player &#123;</span></span><br><span class="line"><span class="undefined">		margin-left: -10px;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.sign &#123;</span></span><br><span class="line"><span class="undefined">		text-align: right;</span></span><br><span class="line"><span class="undefined">		font-style: italic;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">  	#page-visit &#123;</span></span><br><span class="line"><span class="undefined">		display: none;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.center &#123;</span></span><br><span class="line"><span class="undefined">		text-align: center;</span></span><br><span class="line"><span class="undefined">		height: 2.5em;</span></span><br><span class="line"><span class="undefined">		font-weight: bold;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.article-entry hr &#123;</span></span><br><span class="line"><span class="undefined">		margin: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.pic &#123;</span></span><br><span class="line"><span class="undefined">		text-align: center;</span></span><br><span class="line"><span class="undefined">		margin: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">	.pic br &#123;</span></span><br><span class="line"><span class="undefined">  		display: none;</span></span><br><span class="line"><span class="undefined">  	&#125;</span></span><br><span class="line"><span class="undefined">	#container .article-info-post.article-info &#123;</span></span><br><span class="line"><span class="undefined">  	display: none;</span></span><br><span class="line"><span class="undefined">  	&#125;</span></span><br><span class="line"><span class="undefined">	#container .article .article-title &#123;</span></span><br><span class="line"><span class="undefined">	padding: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><strong><em>Custom 404 Pages</em></strong> by <strong>GitHub Help</strong> on <code>2015</code>: <a href="https://help.github.com/articles/custom-404-pages/" target="_blank" rel="noopener">https://help.github.com/articles/custom-404-pages/</a> </li>
-</ol>
+        <p>使用java代码操作oracle数据库需要下载oracle的jdbc连接桥，使用其连接操作。<br><a id="more"></a></p>
+<h2 id="下载引入jdbc连接桥"><a href="#下载引入jdbc连接桥" class="headerlink" title="下载引入jdbc连接桥"></a>下载引入jdbc连接桥</h2><p>在项目中我使用的是maven构建的项目，由于oracle授权的关系maven源中不可以直接下载。需要到官方的网站去下载，然后手动添加到maven本地仓库里边。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 添加oracle jdbc driver --&gt;  </span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.oracle&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;ojdbc14&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;10.2.0.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="oracle连接"><a href="#oracle连接" class="headerlink" title="oracle连接"></a>oracle连接</h2><h3 id="连接配置"><a href="#连接配置" class="headerlink" title="连接配置"></a>连接配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;oracle.driver&quot;:&quot;oracle.jdbc.driver.OracleDriver&quot;,</span><br><span class="line">	&quot;oracle.url&quot;:&quot;jdbc:oracle:thin:@192.168.1.5:1521:orcl&quot;,</span><br><span class="line">	&quot;oracle.user&quot;:&quot;admin&quot;,</span><br><span class="line">	&quot;oracle.password&quot;:&quot;123456&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="oracle连接类"><a href="#oracle连接类" class="headerlink" title="oracle连接类"></a>oracle连接类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class OracleCon &#123;</span><br><span class="line">	public static Connection getConn()&#123;</span><br><span class="line">		//声明Connection对象</span><br><span class="line">        Connection con = null;</span><br><span class="line">    	//遍历查询结果集</span><br><span class="line">        try &#123;</span><br><span class="line">            //加载驱动程序</span><br><span class="line">        	JSONObject  conf = Configure.getApiConf();</span><br><span class="line">            Class.forName(conf.optString(&quot;driver&quot;));            </span><br><span class="line">            //1.getConnection()方法，连接MySQL数据库！！</span><br><span class="line">            con = DriverManager.getConnection(conf.optString(&quot;url&quot;),conf.optString(&quot;user&quot;),conf.optString(&quot;password&quot;));</span><br><span class="line">            if(!con.isClosed())&#123;</span><br><span class="line">                //System.out.println(&quot;目标数据库连接成功!&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch(ClassNotFoundException e) &#123;   </span><br><span class="line">            //数据库驱动类异常处理</span><br><span class="line">            System.out.println(&quot;Sorry,can`t find the Driver! 找不到数据库连接驱动！ &quot;);   </span><br><span class="line">            e.printStackTrace();   </span><br><span class="line">            &#125; catch(SQLException e) &#123;</span><br><span class="line">            //数据库连接失败异常处理</span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">            &#125;catch (Exception e) &#123;</span><br><span class="line">            // TODO: handle exception</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            </span><br><span class="line">        &#125;finally&#123;</span><br><span class="line">            //System.out.println(&quot;数据连接结束！！&quot;);           </span><br><span class="line">        &#125;</span><br><span class="line">		return con;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="入库操作"><a href="#入库操作" class="headerlink" title="入库操作"></a>入库操作</h2><pre><code>StringBuffer sql = new StringBuffer();
+sql.append( &quot; INSERT INTO   LETOUR.WEBVIEWLOGS  (\&quot;querycode\&quot;,\&quot;originaddress\&quot;,&quot;
+        + &quot; \&quot;desaddress\&quot;,\&quot;url\&quot;,\&quot;agentos\&quot;,\&quot;agentosname\&quot;,&quot;
+        + &quot;\&quot;agentuaname\&quot;,\&quot;agentdevicetype\&quot;,\&quot;viewdatetime\&quot; ) &quot;
+        + &quot; VALUES(?,?,?,?,?,?,?,?,?) &quot;);
+Connection con = OracleCon.getConn();
 
+datetime = datetime.replace(&quot;T&quot;, &quot; &quot;);
+datetime = datetime.replace(&quot;+08:00&quot;, &quot; &quot;);
+// 关闭事务自动提交
+con.setAutoCommit(false);
+PreparedStatement pst = (PreparedStatement) con.prepareStatement(sql.toString());
+pst.setString(1, topic);
+pst.setString(2, oip);
+pst.setString(3, dip);
+pst.setString(4, Url);
+pst.setString(5, userAgentInfo.getOsFamily());
+pst.setString(6, userAgentInfo.getOsName());
+pst.setString(7, userAgentInfo.getUaName());
+pst.setString(8, userAgentInfo.getDeviceType());
+pst.setString(9,datetime);
+pst.addBatch();
+// 执行批量更新
+pst.executeBatch();
+// 语句执行完毕，提交本事务
+con.commit();
+pst.close();
+con.close();
+</code></pre>
       
       
         <div class="page-reward">
@@ -349,13 +363,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/04/hexo-404-page/">在 Hexo 中创建匹配主题的404页面</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/14/java原生操作数据库/">java原生操作数据库</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2017年12月04日 - 15时35分</p>
-        <p><span>最后更新:</span>2017年12月04日 - 15时40分</p>
+        <p><span>发布时间:</span>2019年06月14日 - 15时51分</p>
+        <p><span>最后更新:</span>2019年06月14日 - 16时18分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/04/hexo-404-page/" title="在 Hexo 中创建匹配主题的404页面">https://xhyangdali.github.io/2017/12/04/hexo-404-page/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2017/12/04/hexo-404-page/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/14/java原生操作数据库/" title="java原生操作数据库">https://xhyangdali.github.io/2019/06/14/java原生操作数据库/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/06/14/java原生操作数据库/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -368,18 +382,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/12/05/2017-12-5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          百善孝为先
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/30/2017.12.1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一篇博客</div>
+    <a href="/2019/06/05/oracle数据库创建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">oracle数据库创建</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -390,7 +395,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建404页面"><span class="toc-number">1.</span> <span class="toc-text">新建404页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义页面样式"><span class="toc-number">2.</span> <span class="toc-text">自定义页面样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">3.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载引入jdbc连接桥"><span class="toc-number">1.</span> <span class="toc-text">下载引入jdbc连接桥</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#oracle连接"><span class="toc-number">2.</span> <span class="toc-text">oracle连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#连接配置"><span class="toc-number">2.1.</span> <span class="toc-text">连接配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#oracle连接类"><span class="toc-number">2.2.</span> <span class="toc-text">oracle连接类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#入库操作"><span class="toc-number">3.</span> <span class="toc-text">入库操作</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -456,13 +461,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/05/2017-12-5/" title="上一篇: 百善孝为先">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/11/30/2017.12.1/" title="下一篇: 第一篇博客">
+            <a href="/2019/06/05/oracle数据库创建/" title="下一篇: oracle数据库创建">
                 <i class="fa fa-angle-right"></i>
             </a>
         

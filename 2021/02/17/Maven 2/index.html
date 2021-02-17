@@ -3,25 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hadoop部署之一 | Yang&#39;s Blog</title>
+  <title>Maven介绍 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
-<meta name="keywords" content="hadoop 配置">
+  <meta name="description" content="Maven 就是是专门为Java项目打造的管理和构建工具 Maven使用pom.xml定义项目内容，并使用预设的目录结构；在Maven中声明一个依赖项可以自动下载并导入classpath；Maven使用groupId，artifactId和version唯一定位一个依赖。">
+<meta name="keywords" content="Java Maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop部署之一">
-<meta property="og:url" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/index.html">
+<meta property="og:title" content="Maven介绍">
+<meta property="og:url" content="https://xhyangdali.github.io/2021/02/17/Maven 2/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
+<meta property="og:description" content="Maven 就是是专门为Java项目打造的管理和构建工具 Maven使用pom.xml定义项目内容，并使用预设的目录结构；在Maven中声明一个依赖项可以自动下载并导入classpath；Maven使用groupId，artifactId和version唯一定位一个依赖。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/2.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/3.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/4.png">
-<meta property="og:updated_time" content="2019-05-23T02:33:00.000Z">
+<meta property="og:updated_time" content="2021-02-17T08:13:24.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop部署之一">
-<meta name="twitter:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
-<meta name="twitter:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
+<meta name="twitter:title" content="Maven介绍">
+<meta name="twitter:description" content="Maven 就是是专门为Java项目打造的管理和构建工具 Maven使用pom.xml定义项目内容，并使用预设的目录结构；在Maven中声明一个依赖项可以自动下载并导入classpath；Maven使用groupId，artifactId和version唯一定位一个依赖。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -239,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Hadoop部署之一" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Maven 2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/23/Hadoop部署之一/" class="article-date">
-      <time datetime="2019-05-23T01:20:23.000Z" itemprop="datePublished">2019-05-23</time>
+      <a href="/2021/02/17/Maven 2/" class="article-date">
+      <time datetime="2021-02-17T07:52:10.000Z" itemprop="datePublished">2021-02-17</time>
 </a>
     </div>
   
@@ -256,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hadoop部署之一
+      Maven介绍
     </h1>
   
 
@@ -265,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/大数据/">大数据</a>
+    <a class="article-category-link" href="/categories/Maven/">Maven</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop-配置/">hadoop 配置</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-Maven/">Java Maven</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -281,37 +276,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。<br><a id="more"></a></p>
-<h1 id="HDFS框架"><a href="#HDFS框架" class="headerlink" title="HDFS框架"></a>HDFS框架</h1><p><img src="/2019/05/23/Hadoop部署之一/1.png" alt="HDFS框架"></p>
-<h1 id="MapReduce架构"><a href="#MapReduce架构" class="headerlink" title="MapReduce架构"></a>MapReduce架构</h1><p><img src="/2019/05/23/Hadoop部署之一/2.png" alt="MapReduce架构"></p>
-<h1 id="Hadoop下载安装"><a href="#Hadoop下载安装" class="headerlink" title="Hadoop下载安装"></a>Hadoop下载安装</h1><h2 id="Hadoop下载"><a href="#Hadoop下载" class="headerlink" title="Hadoop下载"></a>Hadoop下载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="Hadoop安装"><a href="#Hadoop安装" class="headerlink" title="Hadoop安装"></a>Hadoop安装</h2><p>由于Hadoop的部署需要java JDK 的支持，所以需要先安装Java JDK 参考 <a href="/2019/05/17/日志分析系统(zookeeper+flume+kafka)之实时接收数据/" title="日志分析系统(zookeeper+flume+kafka)之实时接收数据">日志分析系统(zookeeper+flume+kafka)之实时接收数据</a>  里边有涉及到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/</span><br><span class="line">tar zxvf ./hadoop-3.2.0.tar.gz</span><br><span class="line">mv ./hadoop-3.2.0 ./hadoop</span><br></pre></td></tr></table></figure></p>
-<h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>设置JAVA的环境变量，JAVA_HOME是JDK的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 设置JAVA的环境变量，JAVA_HOME是JDK的位置</span><br><span class="line">vi /etc/profile</span><br><span class="line">export HADOOP_HOME=/usr/local/hadoop</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin	</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk </span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"># 设置生效</span><br><span class="line">source /etc/profile</span><br><span class="line"># 设置Hadoop的JAVA_HOME</span><br><span class="line">vi etc/hadoop/hadoop-env.sh</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.91-2.6.2.3.el7.x86_64</span><br></pre></td></tr></table></figure></p>
-<h1 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h1><h2 id="需要配置的文件"><a href="#需要配置的文件" class="headerlink" title="需要配置的文件"></a>需要配置的文件</h2><ul>
-<li>hadoop/etc/hadoop/hadoop-env.sh </li>
-<li>hadoop/etc/hadoop/yarn-env.sh </li>
-<li>hadoop/etc/hadoop/core-site.xml </li>
-<li>hadoop/etc/hadoop/hdfs-site.xml </li>
-<li>hadoop/etc/hadoop/mapred-site.xml </li>
-<li>hadoop/etc/hadoop/yarn-site.xml</li>
-</ul>
-<h2 id="core-site-xml配置"><a href="#core-site-xml配置" class="headerlink" title="core-site.xml配置"></a>core-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;name&gt;fs.default.name&lt;/name&gt;</span><br><span class="line">&lt;value&gt;hdfs://10.1.1.35:9000&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="hdfs-site-xml配置"><a href="#hdfs-site-xml配置" class="headerlink" title="hdfs-site.xml配置"></a>hdfs-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:50070&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="mapred-site-xml配置"><a href="#mapred-site-xml配置" class="headerlink" title="mapred-site.xml配置"></a>mapred-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.job.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50030&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.task.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50060&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="hadoop-env-sh配置"><a href="#hadoop-env-sh配置" class="headerlink" title="hadoop-env.sh配置"></a>hadoop-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
-<h2 id="yarn-site-xml配置"><a href="#yarn-site-xml配置" class="headerlink" title="yarn-site.xml配置"></a>yarn-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.resourcemanager.webapp.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:8099&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;这个地址是mr管理界面的&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="yarn-env-sh配置"><a href="#yarn-env-sh配置" class="headerlink" title="yarn-env.sh配置"></a>yarn-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="格式换文件系统"><a href="#格式换文件系统" class="headerlink" title="格式换文件系统"></a>格式换文件系统</h2><p>hdfs namenode -format</p>
-<h2 id="启动节点"><a href="#启动节点" class="headerlink" title="启动节点"></a>启动节点</h2><p>sbin/start-dfs.sh</p>
-<h2 id="hadoop文件管理"><a href="#hadoop文件管理" class="headerlink" title="hadoop文件管理"></a>hadoop文件管理</h2><p><img src="/2019/05/23/Hadoop部署之一/3.png" alt="hadoop资源管理"></p>
+        <p>Maven 就是是专门为Java项目打造的管理和构建工具</p>
+<p>Maven使用pom.xml定义项目内容，并使用预设的目录结构；在Maven中声明一个依赖项可以自动下载并导入classpath；Maven使用groupId，artifactId和version唯一定位一个依赖。<br><a id="more"></a></p>
+<h1 id="Maven介绍"><a href="#Maven介绍" class="headerlink" title="Maven介绍"></a>Maven介绍</h1><p>在了解Maven之前，我们先来看看一个Java项目需要的东西。首先，我们需要确定引入哪些依赖包。例如，如果我们需要用到commons logging，我们就必须把commons logging的jar包放入classpath。如果我们还需要log4j，就需要把log4j相关的jar包都放到classpath中。这些就是依赖包的管理。</p>
+<p>其次，我们要确定项目的目录结构。例如，src目录存放Java源码，resources目录存放配置文件，bin目录存放编译生成的.class文件。</p>
+<p>此外，我们还需要配置环境，例如JDK的版本，编译打包的流程，当前代码的版本号。</p>
+<p>最后，除了使用Eclipse这样的IDE进行编译外，我们还必须能通过命令行工具进行编译，才能够让项目在一个独立的服务器上编译、测试、部署。</p>
+<p>这些工作难度不大，但是非常琐碎且耗时。如果每一个项目都自己搞一套配置，肯定会一团糟。我们需要的是一个标准化的Java项目管理和构建工具。</p>
+<p>Maven就是是专门为Java项目打造的管理和构建工具，它的主要功能有：</p>
 <ul>
-<li>浏览器打开 <a href="http://10.1.1.35:50070/" target="_blank" rel="noopener">http://10.1.1.35:50070/</a></li>
+<li>提供了一套标准化的项目结构；</li>
+<li>提供了一套标准化的构建流程（编译，测试，打包，发布……）；</li>
+<li>提供了一套依赖管理机制。<h1 id="Maven项目结构"><a href="#Maven项目结构" class="headerlink" title="Maven项目结构"></a>Maven项目结构</h1>一个使用Maven管理的普通的Java项目，它的目录结构默认如下：</li>
 </ul>
-<h2 id="hadoop-资源管理"><a href="#hadoop-资源管理" class="headerlink" title="hadoop 资源管理"></a>hadoop 资源管理</h2><p><img src="/2019/05/23/Hadoop部署之一/4.png" alt="hadoop资源管理"></p>
+<p>a-maven-project<br>├── pom.xml<br>├── src<br>│   ├── main<br>│   │   ├── java<br>│   │   └── resources<br>│   └── test<br>│       ├── java<br>│       └── resources<br>└── target<br>项目的根目录a-maven-project是项目名，它有一个项目描述文件pom.xml，存放Java源码的目录是src/main/java，存放资源文件的目录是src/main/resources，存放测试源码的目录是src/test/java，存放测试资源的目录是src/test/resources，最后，所有编译、打包生成的文件都放在target目录里。这些就是一个Maven项目的标准目录结构。</p>
+<p>所有的目录结构都是约定好的标准结构，我们千万不要随意修改目录结构。使用标准结构不需要做任何配置，Maven就可以正常使用。</p>
+<p>我们再来看最关键的一个项目描述文件pom.xml，它的内容长得像下面：<br>一个使用Maven管理的普通的Java项目，它的目录结构默认如下：</p>
+<p>a-maven-project<br>├── pom.xml<br>├── src<br>│   ├── main<br>│   │   ├── java<br>│   │   └── resources<br>│   └── test<br>│       ├── java<br>│       └── resources<br>└── target<br>项目的根目录a-maven-project是项目名，它有一个项目描述文件pom.xml，存放Java源码的目录是src/main/java，存放资源文件的目录是src/main/resources，存放测试源码的目录是src/test/java，存放测试资源的目录是src/test/resources，最后，所有编译、打包生成的文件都放在target目录里。这些就是一个Maven项目的标准目录结构。</p>
+<p>所有的目录结构都是约定好的标准结构，我们千万不要随意修改目录结构。使用标准结构不需要做任何配置，Maven就可以正常使用。</p>
+<p>我们再来看最关键的一个项目描述文件pom.xml，它的内容长得像下面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;project ...&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;groupId&gt;com.itranswarp.learnjava&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;hello&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">	&lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">        ...</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;commons-logging&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中，groupId类似于Java的包名，通常是公司或组织名称，artifactId类似于Java的类名，通常是项目名称，再加上version，一个Maven工程就是由groupId，artifactId和version作为唯一标识。我们在引用其他第三方库的时候，也是通过这3个变量确定。例如，依赖commons-logging：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;commons-logging&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用<dependency>声明一个依赖后，Maven就会自动下载这个依赖包并把它放到classpath中。</dependency></p>
+<h1 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h1><p>要安装Maven，可以从Maven官网下载最新的Maven 3.6.x，然后在本地解压，设置几个环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">M2_HOME=/path/to/maven-3.6.x</span><br><span class="line">PATH=$PATH:$M2_HOME/bin</span><br></pre></td></tr></table></figure></p>
+<p>Windows可以把%M2_HOME%\bin添加到系统Path变量中。</p>
+<p>然后，打开命令行窗口，输入mvn -version，应该看到Maven的版本信息：</p>
+<p>┌────────────────────────────────────────────────────────┐<br>│Command Prompt                                    - □ x │<br>├────────────────────────────────────────────────────────┤<br>│Microsoft Windows [Version 10.0.0]                      │<br>│(c) 2015 Microsoft Corporation. All rights reserved.    │<br>│                                                        │<br>│C:> mvn -version                                       │<br>│Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918…) │<br>│Maven home: C:\Users\liaoxuefeng\maven                  │<br>│Java version: …                                       │<br>│…                                                     │<br>│C:> _                                                  │<br>│                                                        │<br>│                                                        │<br>└────────────────────────────────────────────────────────┘<br>如果提示命令未找到，说明系统PATH路径有误，需要修复后再运行。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>Maven是一个Java项目的管理和构建工具：</p>
 <ul>
-<li>浏览器打开 <a href="http://10.1.1.35:8099/cluster" target="_blank" rel="noopener">http://10.1.1.35:8099/cluster</a></li>
+<li>Maven使用pom.xml定义项目内容，并使用预设的目录结构；</li>
+<li>在Maven中声明一个依赖项可以自动下载并导入classpath；</li>
+<li>Maven使用groupId，artifactId和version唯一定位一个依赖。</li>
 </ul>
-<h2 id="文件测试-文件wordcount"><a href="#文件测试-文件wordcount" class="headerlink" title="文件测试+文件wordcount"></a>文件测试+文件wordcount</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 上传</span><br><span class="line">hadoop fs -put /home/wwwlogs/access.log hdfs://10.1.1.35:9000/</span><br><span class="line"># 删除 </span><br><span class="line">hadoop  fs  -rm  hdfs://localhost:9000/access.log</span><br><span class="line"># 计数测试</span><br><span class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.0.jar wordcount /home/wwwlogs/access.log /myorder/</span><br><span class="line"># 结果检查</span><br><span class="line">hadoop fs -ls /myorder</span><br><span class="line">hadoop fs -cat /myorder/part-r-00000</span><br><span class="line"># 结果</span><br><span class="line">[30/Apr/2019:13:33:47   45</span><br><span class="line">[30/Apr/2019:13:33:48   3</span><br><span class="line">[30/Apr/2019:13:34:18   47</span><br><span class="line">[30/Apr/2019:13:34:27   4</span><br><span class="line">[30/Apr/2019:13:34:28   37</span><br></pre></td></tr></table></figure>
+
       
       
         <div class="page-reward">
@@ -366,13 +362,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/23/Hadoop部署之一/">Hadoop部署之一</a></p>
+        <p><span>本文标题:</span><a href="/2021/02/17/Maven 2/">Maven介绍</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2019年05月23日 - 09时20分</p>
-        <p><span>最后更新:</span>2019年05月23日 - 10时33分</p>
+        <p><span>发布时间:</span>2021年02月17日 - 15时52分</p>
+        <p><span>最后更新:</span>2021年02月17日 - 16时13分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/23/Hadoop部署之一/" title="Hadoop部署之一">https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/02/17/Maven 2/" title="Maven介绍">https://xhyangdali.github.io/2021/02/17/Maven 2/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2021/02/17/Maven 2/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -385,18 +381,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/23/Hive安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hive安装与配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/21/日志分析系统(flume)之数据加密/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">日志分析系统(flume)之数据加密</div>
+    <a href="/2021/02/16/Linux-CentOS系统上安装Eclipse/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux CentOS系统上安装Eclipse</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -407,7 +394,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDFS框架"><span class="toc-number">1.</span> <span class="toc-text">HDFS框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MapReduce架构"><span class="toc-number">2.</span> <span class="toc-text">MapReduce架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop下载安装"><span class="toc-number">3.</span> <span class="toc-text">Hadoop下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop下载"><span class="toc-number">3.1.</span> <span class="toc-text">Hadoop下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop安装"><span class="toc-number">3.2.</span> <span class="toc-text">Hadoop安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量设置"><span class="toc-number">3.3.</span> <span class="toc-text">环境变量设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop配置"><span class="toc-number">4.</span> <span class="toc-text">Hadoop配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要配置的文件"><span class="toc-number">4.1.</span> <span class="toc-text">需要配置的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#core-site-xml配置"><span class="toc-number">4.2.</span> <span class="toc-text">core-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs-site-xml配置"><span class="toc-number">4.3.</span> <span class="toc-text">hdfs-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mapred-site-xml配置"><span class="toc-number">4.4.</span> <span class="toc-text">mapred-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-env-sh配置"><span class="toc-number">4.5.</span> <span class="toc-text">hadoop-env.sh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-site-xml配置"><span class="toc-number">4.6.</span> <span class="toc-text">yarn-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-env-sh配置"><span class="toc-number">4.7.</span> <span class="toc-text">yarn-env.sh配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">5.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#格式换文件系统"><span class="toc-number">5.1.</span> <span class="toc-text">格式换文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动节点"><span class="toc-number">5.2.</span> <span class="toc-text">启动节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop文件管理"><span class="toc-number">5.3.</span> <span class="toc-text">hadoop文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-资源管理"><span class="toc-number">5.4.</span> <span class="toc-text">hadoop 资源管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件测试-文件wordcount"><span class="toc-number">5.5.</span> <span class="toc-text">文件测试+文件wordcount</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven介绍"><span class="toc-number">1.</span> <span class="toc-text">Maven介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven项目结构"><span class="toc-number">2.</span> <span class="toc-text">Maven项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Maven"><span class="toc-number">3.</span> <span class="toc-text">安装Maven</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -473,13 +460,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/23/Hive安装与配置/" title="上一篇: Hive安装与配置">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/21/日志分析系统(flume)之数据加密/" title="下一篇: 日志分析系统(flume)之数据加密">
+            <a href="/2021/02/16/Linux-CentOS系统上安装Eclipse/" title="下一篇: Linux CentOS系统上安装Eclipse">
                 <i class="fa fa-angle-right"></i>
             </a>
         

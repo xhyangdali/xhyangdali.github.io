@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>H5+APP实现异步请求远程接口通用方法 | Yang&#39;s Blog</title>
+  <title>JVM调优的正确姿势 | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="H5+APP的项目中在搭建项目框架时需要统一接口调用，因此写了一个统一的调用函数。">
-<meta name="keywords" content="H5 H5+app">
+  <meta name="description" content="因为JVM自带GC，又有无数可以微调的参数，所以，JVM调优，现在已经被当作Java面试的必考知识点，精通JVM调优参数的童鞋，可以冠名微操小王子。">
+<meta name="keywords" content="Java JVM调优">
 <meta property="og:type" content="article">
-<meta property="og:title" content="H5+APP实现异步请求远程接口通用方法">
-<meta property="og:url" content="https://xhyangdali.github.io/2019/05/14/H5+APP实现异步请求远程接口通用方法/index.html">
+<meta property="og:title" content="JVM调优的正确姿势">
+<meta property="og:url" content="https://xhyangdali.github.io/2021/02/22/JVM调优的正确姿势/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="H5+APP的项目中在搭建项目框架时需要统一接口调用，因此写了一个统一的调用函数。">
+<meta property="og:description" content="因为JVM自带GC，又有无数可以微调的参数，所以，JVM调优，现在已经被当作Java面试的必考知识点，精通JVM调优参数的童鞋，可以冠名微操小王子。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T09:06:07.000Z">
+<meta property="og:updated_time" content="2021-02-22T09:00:43.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="H5+APP实现异步请求远程接口通用方法">
-<meta name="twitter:description" content="H5+APP的项目中在搭建项目框架时需要统一接口调用，因此写了一个统一的调用函数。">
+<meta name="twitter:title" content="JVM调优的正确姿势">
+<meta name="twitter:description" content="因为JVM自带GC，又有无数可以微调的参数，所以，JVM调优，现在已经被当作Java面试的必考知识点，精通JVM调优参数的童鞋，可以冠名微操小王子。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -234,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-H5+APP实现异步请求远程接口通用方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JVM调优的正确姿势" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/14/H5+APP实现异步请求远程接口通用方法/" class="article-date">
-      <time datetime="2019-05-14T08:25:23.000Z" itemprop="datePublished">2019-05-14</time>
+      <a href="/2021/02/22/JVM调优的正确姿势/" class="article-date">
+      <time datetime="2021-02-22T08:46:07.000Z" itemprop="datePublished">2021-02-22</time>
 </a>
     </div>
   
@@ -251,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      H5+APP实现异步请求远程接口通用方法
+      JVM调优的正确姿势
     </h1>
   
 
@@ -260,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hbuilder/">Hbuilder</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5-H5-app/">H5 H5+app</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java-JVM调优/">Java JVM调优</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -276,13 +276,32 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>H5+APP的项目中在搭建项目框架时需要统一接口调用，因此写了一个统一的调用函数。<br><a id="more"></a></p>
-<h1 id="什么是Ajax？"><a href="#什么是Ajax？" class="headerlink" title="什么是Ajax？"></a>什么是Ajax？</h1><p>Ajax = 异步 JavaScript 和XML。</p>
-<p>Ajax是一种用于创建快速动态网页的技术。</p>
-<p>通过在后台与服务器进行少量数据交换，Ajax可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
-<h1 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h1><p>其实实现的较为简单，通过封装Jquery的Ajax请求方法来实现</p>
-<h1 id="通过HTTP-GET-获取数据"><a href="#通过HTTP-GET-获取数据" class="headerlink" title="通过HTTP GET 获取数据"></a>通过HTTP GET 获取数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 接口获取数据通过GET</span><br><span class="line"> * 通过get方法获取数据</span><br><span class="line"> */</span><br><span class="line">function getDataByGet(params, url) &#123;</span><br><span class="line">	var result = &#123;</span><br><span class="line">		code: -1,</span><br><span class="line">		msg: &apos;网络请求失败！&apos;</span><br><span class="line">	&#125;;</span><br><span class="line">	var Url_ = url + &quot;?token=&quot; + getTokenStr();</span><br><span class="line">	mui.ajax(url, &#123;</span><br><span class="line">		data: params,</span><br><span class="line">		dataType: &apos;jsonp&apos;, //服务器返回json格式数据</span><br><span class="line">		type: &apos;get&apos;, //HTTP请求类型</span><br><span class="line">		timeout: 5000, //超时时间设置为5秒；</span><br><span class="line">		headers: &#123;</span><br><span class="line">			&apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		async: false,</span><br><span class="line">		success: function(data) &#123;</span><br><span class="line">			//服务器返回响应，根据响应结果，分析是否登录成功；</span><br><span class="line">			result = data;</span><br><span class="line">		&#125;,</span><br><span class="line">		error: function(err) &#123;</span><br><span class="line">			//异常处理；</span><br><span class="line">			var err_ = &#123;</span><br><span class="line">				code: &quot;-1&quot;,</span><br><span class="line">				msg: &quot;网络请求错误！&quot;</span><br><span class="line">			&#125;;</span><br><span class="line">			mui.toast(JSON.stringify(err_));</span><br><span class="line">			result = err_;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="通过HTTP-POST-获取数据"><a href="#通过HTTP-POST-获取数据" class="headerlink" title="通过HTTP POST 获取数据"></a>通过HTTP POST 获取数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * 接口获取数据通过POST</span><br><span class="line"> * 通过post方法获取数据</span><br><span class="line"> */</span><br><span class="line">function getDataByPostSync(params, url) &#123;</span><br><span class="line">	var result = &#123;</span><br><span class="line">		code: -1,</span><br><span class="line">		msg: &apos;网络请求失败！&apos;</span><br><span class="line">	&#125;;</span><br><span class="line">	var Url_ = url + &quot;?token=&quot; + getTokenStr();</span><br><span class="line">	mui.ajax(Url_, &#123;</span><br><span class="line">		data: params,</span><br><span class="line">		dataType: &apos;json&apos;, //服务器返回json格式数据</span><br><span class="line">		type: &apos;POST&apos;, //HTTP请求类型</span><br><span class="line">		async: true,</span><br><span class="line">		timeout: 5000, //超时时间设置为5秒；		</span><br><span class="line">		headers: &#123;</span><br><span class="line">			&apos;Content-Type&apos;: &apos;application/json;charset=UTF-8&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		contentType: &quot;application/json&quot;,</span><br><span class="line">		success: function(data) &#123;</span><br><span class="line">			//服务器返回响应，根据响应结果，分析是否登录成功；</span><br><span class="line">			if(data.code == &apos;918&apos;)&#123;</span><br><span class="line">				//账号被登陆，故推出登陆</span><br><span class="line">				app.setState(&#123;&#125;);</span><br><span class="line">				localStorage.setItem(&apos;ISONLINE&apos;,&apos;0&apos;);</span><br><span class="line">				localStorage.setItem(&apos;TOKENINFO&apos;,&apos;&apos;);</span><br><span class="line">				localStorage.setItem(&apos;TOKEN&apos;,&apos;&apos;);</span><br><span class="line">				localStorage.setItem(&apos;USERID&apos;,&apos;&apos;);</span><br><span class="line">				localStorage.setItem(&apos;USERDATA&apos;,&apos;&apos;);</span><br><span class="line">				mui.toast(&apos;您的账号被别人登陆了，请您重新登陆！建议及时修改登陆密码！&apos;);</span><br><span class="line">				mui.openWindow(&#123;</span><br><span class="line">					url: &apos;../login.html&apos;,</span><br><span class="line">					id: &apos;login&apos;,</span><br><span class="line">					show: &#123;</span><br><span class="line">						aniShow: &apos;pop-in&apos;</span><br><span class="line">					&#125;,</span><br><span class="line">					waiting: &#123;</span><br><span class="line">						autoShow: false</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;</span><br><span class="line">			result = data;</span><br><span class="line">		&#125;,</span><br><span class="line">		error: function(xhr, type, errorThrown) &#123;</span><br><span class="line">			//异常处理；</span><br><span class="line">			var err_ = &#123;</span><br><span class="line">				code: &quot;-1&quot;,</span><br><span class="line">				msg: &quot;网络请求错误！&quot;</span><br><span class="line">			&#125;;</span><br><span class="line">			mui.toast(&apos; 错误状态 xhr.status:&apos; + xhr.status + &apos; 响应状态 xhr.readyState: &apos; + xhr.readyState + &apos; 捕获的异常： &apos; + errorThrown);</span><br><span class="line">			result = err_;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 接口获取数据通过POST</span><br><span class="line"> * 通过post方法获取数据</span><br><span class="line"> */</span><br><span class="line">function getDataByPost(params, url) &#123;</span><br><span class="line">	var result = &#123;</span><br><span class="line">		code: -1,</span><br><span class="line">		msg: &apos;网络请求失败！&apos;</span><br><span class="line">	&#125;;</span><br><span class="line">	var baseurl = localStorage.getItem(&apos;Url&apos;)</span><br><span class="line">	var Url_ = &quot;&quot;;</span><br><span class="line">	//没有使用token的请求需要再次过滤</span><br><span class="line">	if (url == baseurl + &apos;common/staff/send_forgetpwd_code&apos; || url == baseurl + &apos;common/staff/update_pwd&apos; ||</span><br><span class="line">		url == baseurl + &apos;common/companylist&apos; || url == baseurl + &apos;common/staffregister&apos;) &#123;</span><br><span class="line">		Url_ = url;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		Url_ = url + &quot;?token=&quot; + getTokenStr();</span><br><span class="line">	&#125;</span><br><span class="line">	mui.ajax(Url_, &#123;</span><br><span class="line">		data: params,</span><br><span class="line">		dataType: &apos;json&apos;, //服务器返回json格式数据</span><br><span class="line">		type: &apos;POST&apos;, //HTTP请求类型</span><br><span class="line">		async: false,</span><br><span class="line">		timeout: 5000, //超时时间设置为5秒；</span><br><span class="line">		headers: &#123;</span><br><span class="line">			&apos;Content-Type&apos;: &apos;application/json;charset=UTF-8&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		contentType: &quot;application/json&quot;,</span><br><span class="line">		success: function(data) &#123;</span><br><span class="line">			//服务器返回响应，根据响应结果，分析是否登录成功；</span><br><span class="line">			result = data;</span><br><span class="line">		&#125;,</span><br><span class="line">		error: function(xhr, type, errorThrown) &#123;</span><br><span class="line">			//异常处理；</span><br><span class="line">			var err_ = &#123;</span><br><span class="line">				code: &quot;-1&quot;,</span><br><span class="line">				msg: &quot;网络请求错误！&quot;</span><br><span class="line">			&#125;;</span><br><span class="line">			mui.toast(&apos; 错误状态 xhr.status:&apos; + xhr.status + &apos; 响应状态 xhr.readyState: &apos; + xhr.readyState + &apos; 捕获的异常： &apos; + errorThrown);</span><br><span class="line">			result = err_;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>因为JVM自带GC，又有无数可以微调的参数，所以，JVM调优，现在已经被当作Java面试的必考知识点，精通JVM调优参数的童鞋，可以冠名微操小王子。<br><a id="more"></a></p>
+<h1 id="如何调优"><a href="#如何调优" class="headerlink" title="如何调优"></a>如何调优</h1><p>本文简单说一说JVM应如何调优。</p>
+<p>Java语言本身的成功，除了天时地利人和，JVM功不可没。</p>
+<p>毫不夸张地说，JVM是现代软件工程最成功的案例之一。它规模庞大，代码极其复杂，但运行极其稳定可靠，所以，许多厂商的核心业务系统，才敢放心地用Java编写，运行在JVM之上。</p>
+<p>因为JVM自带GC，又有无数可以微调的参数，所以，JVM调优，现在已经被当作Java面试的必考知识点，精通JVM调优参数的童鞋，可以冠名微操小王子。</p>
+<p>写了这么多年的Java程序，很遗憾，我迄今为止只会用两个参数：XMS和XMX，能正确写出如下启动脚本：</p>
+<p>java -Xms1g -Xmx2g -jar abc.jar<br>如果-server也算的话，一共会三，估计面试通过的概率不大。</p>
+<p>我承认我对JVM调优几乎一无所知，原因在于，还没有遇到过性能问题必须通过JVM调优才能解决。</p>
+<p>我发现喜欢研究JVM调优的两类人：</p>
+<p>准备面试的；</p>
+<p>自己写的烂代码想甩锅给JVM的。</p>
+<p>绝大多数情况下，如果程序出现了性能问题，比如TPS上不去，内存撑爆了，最好自己冷静一下，先监控一下自己程序的日志和性能数据，如果这两个都没有，就一口咬定JVM有问题，有问题的很可能不是JVM，而是态度。</p>
+<p>这并不是说JVM不会出问题，或者说JVM就肯定没有bug，而是说，软件领域，bug能不能尽可能地被发现然后修复，很大程度上取决于用的人是否足够多。这个世界上用JVM的人多还是用自己写的程序的人多？很明显，能被某个人发现的JVM的bug可能性很低，尤其是公司线上运行的JVM并不会追求最新版本。</p>
+<p>那么JVM正确的调优方式是啥？我个人推荐四步走：</p>
+<ul>
+<li>记录好日志；</li>
+<li>对程序做好性能监控；</li>
+<li>根据日志和性能监控数据修改程序；</li>
+<li>使用专业工具通过不同的JVM参数进行压测并获得最佳配置。</li>
+</ul>
+<p>根据我的个人经验，走完前三步，就可以高质量交付并下班回家了，第四步那是在有摸鱼时间的情况下才做。</p>
+<p>这么多年我一共遇到过两次因为JVM参数引发的问题：</p>
+<p>一次是某公司的超大型Java程序，导致PermGen OutOfMemoryError，那是JDK 1.6平台，原因很简单，编写的Java类数量太多了，撑爆了默认的128M的PermGen。解决方法也很简单，改成更大的512M（参数叫啥已经忘了，因为新版JVM没有PermGen限制了）。但是根本问题不是出在JVM，而是代码太垃圾，Java类的数量超多造成的。</p>
+<p>另一次是因为TPS超高引起内存不足崩溃，但实际上内存有32G非常大，分配给JVM有30G，不可能用完。现实情况是EC2直接被干掉连日志都看不到了。如果手动把TPS降下来（每次sleep 1ms），就能以一定概率成功启动。后咨询AWS技术支持发现，原来是Kafka这货为了提高速度，用了大量的堆外内存结果在高TPS下爆了。解决方法也很简单，把JVM内存限制在系统内存的一半，给操作系统留出足够的内存。这次根本问题是代码性能太高但错误地设定了XMS和XMX造成的。</p>
+<p>所以，绝大部分情况下，并不需要特意去调优JVM，因为那是最后一步的优化手段。即使真的需要，到时候再研究也不迟，因为时间是宝贵的，在解决自己程序的性能问题之前，不必在意JVM的性能。</p>
+
       
       
         <div class="page-reward">
@@ -337,13 +356,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/14/H5+APP实现异步请求远程接口通用方法/">H5+APP实现异步请求远程接口通用方法</a></p>
+        <p><span>本文标题:</span><a href="/2021/02/22/JVM调优的正确姿势/">JVM调优的正确姿势</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2019年05月14日 - 16时25分</p>
-        <p><span>最后更新:</span>2019年05月14日 - 17时06分</p>
+        <p><span>发布时间:</span>2021年02月22日 - 16时46分</p>
+        <p><span>最后更新:</span>2021年02月22日 - 17时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/14/H5+APP实现异步请求远程接口通用方法/" title="H5+APP实现异步请求远程接口通用方法">https://xhyangdali.github.io/2019/05/14/H5+APP实现异步请求远程接口通用方法/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/14/H5+APP实现异步请求远程接口通用方法/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/02/22/JVM调优的正确姿势/" title="JVM调优的正确姿势">https://xhyangdali.github.io/2021/02/22/JVM调优的正确姿势/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2021/02/22/JVM调优的正确姿势/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -356,18 +375,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/14/H5+APP实现联网和定位权限提醒并跳转至设置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          H5+APP实现联网和定位权限提醒并跳转至设置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/14/系统架构设计师[1]计算机组成与结构体系/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">系统架构设计师[1]计算机组成与结构体系</div>
+    <a href="/2021/02/18/Java注解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java注解</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -378,7 +388,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Ajax？"><span class="toc-number">1.</span> <span class="toc-text">什么是Ajax？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实现原理"><span class="toc-number">2.</span> <span class="toc-text">实现原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通过HTTP-GET-获取数据"><span class="toc-number">3.</span> <span class="toc-text">通过HTTP GET 获取数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通过HTTP-POST-获取数据"><span class="toc-number">4.</span> <span class="toc-text">通过HTTP POST 获取数据</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何调优"><span class="toc-number">1.</span> <span class="toc-text">如何调优</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -444,13 +454,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/14/H5+APP实现联网和定位权限提醒并跳转至设置/" title="上一篇: H5+APP实现联网和定位权限提醒并跳转至设置">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/14/系统架构设计师[1]计算机组成与结构体系/" title="下一篇: 系统架构设计师[1]计算机组成与结构体系">
+            <a href="/2021/02/18/Java注解/" title="下一篇: Java注解">
                 <i class="fa fa-angle-right"></i>
             </a>
         

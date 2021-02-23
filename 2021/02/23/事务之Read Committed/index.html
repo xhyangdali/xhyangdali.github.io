@@ -3,25 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hadoop部署之一 | Yang&#39;s Blog</title>
+  <title>事物之Read Committed | Yang&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
-<meta name="keywords" content="hadoop 配置">
+  <meta name="description" content="td{background-color:#CC6600;}在Read Committed隔离级别下，一个事务可能会遇到不可重复读（Non Repeatable Read）的问题。">
+<meta name="keywords" content="数据库 SQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop部署之一">
-<meta property="og:url" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/index.html">
+<meta property="og:title" content="事物之Read Committed">
+<meta property="og:url" content="https://xhyangdali.github.io/2021/02/23/事务之Read Committed/index.html">
 <meta property="og:site_name" content="Yang&#39;s Blog">
-<meta property="og:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
+<meta property="og:description" content="td{background-color:#CC6600;}在Read Committed隔离级别下，一个事务可能会遇到不可重复读（Non Repeatable Read）的问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/2.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/3.png">
-<meta property="og:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/4.png">
-<meta property="og:updated_time" content="2019-05-23T02:33:00.000Z">
+<meta property="og:updated_time" content="2021-02-23T12:52:40.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop部署之一">
-<meta name="twitter:description" content="Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。">
-<meta name="twitter:image" content="https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/1.png">
+<meta name="twitter:title" content="事物之Read Committed">
+<meta name="twitter:description" content="td{background-color:#CC6600;}在Read Committed隔离级别下，一个事务可能会遇到不可重复读（Non Repeatable Read）的问题。">
   
     <link rel="alternative" href="/atom.xml" title="Yang&#39;s Blog" type="application/atom+xml">
   
@@ -239,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Hadoop部署之一" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-事务之Read Committed" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/23/Hadoop部署之一/" class="article-date">
-      <time datetime="2019-05-23T01:20:23.000Z" itemprop="datePublished">2019-05-23</time>
+      <a href="/2021/02/23/事务之Read Committed/" class="article-date">
+      <time datetime="2021-02-23T12:22:51.000Z" itemprop="datePublished">2021-02-23</time>
 </a>
     </div>
   
@@ -256,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hadoop部署之一
+      事物之Read Committed
     </h1>
   
 
@@ -265,13 +260,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/大数据/">大数据</a>
+    <a class="article-category-link" href="/categories/事务之Read-Committed/">事务之Read Committed</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hadoop-配置/">hadoop 配置</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库-SQL/">数据库 SQL</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -281,37 +276,57 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Hadoop是一个能够对海量数据进行分布式处理的系统架构，Hadoop框架的核心是：HDFS和MapReduce，HDFS分布式文件系统为海量的数据提供了存储，MapReduce分布式处理框架为海量的数据提供了计算。<br><a id="more"></a></p>
-<h1 id="HDFS框架"><a href="#HDFS框架" class="headerlink" title="HDFS框架"></a>HDFS框架</h1><p><img src="/2019/05/23/Hadoop部署之一/1.png" alt="HDFS框架"></p>
-<h1 id="MapReduce架构"><a href="#MapReduce架构" class="headerlink" title="MapReduce架构"></a>MapReduce架构</h1><p><img src="/2019/05/23/Hadoop部署之一/2.png" alt="MapReduce架构"></p>
-<h1 id="Hadoop下载安装"><a href="#Hadoop下载安装" class="headerlink" title="Hadoop下载安装"></a>Hadoop下载安装</h1><h2 id="Hadoop下载"><a href="#Hadoop下载" class="headerlink" title="Hadoop下载"></a>Hadoop下载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://apache.claz.org/hadoop/common/hadoop-3.2.0/hadoop-3.2.0.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="Hadoop安装"><a href="#Hadoop安装" class="headerlink" title="Hadoop安装"></a>Hadoop安装</h2><p>由于Hadoop的部署需要java JDK 的支持，所以需要先安装Java JDK 参考 <a href="/2019/05/17/日志分析系统(zookeeper+flume+kafka)之实时接收数据/" title="日志分析系统(zookeeper+flume+kafka)之实时接收数据">日志分析系统(zookeeper+flume+kafka)之实时接收数据</a>  里边有涉及到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/</span><br><span class="line">tar zxvf ./hadoop-3.2.0.tar.gz</span><br><span class="line">mv ./hadoop-3.2.0 ./hadoop</span><br></pre></td></tr></table></figure></p>
-<h2 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h2><p>设置JAVA的环境变量，JAVA_HOME是JDK的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 设置JAVA的环境变量，JAVA_HOME是JDK的位置</span><br><span class="line">vi /etc/profile</span><br><span class="line">export HADOOP_HOME=/usr/local/hadoop</span><br><span class="line">export PATH=$PATH:$HADOOP_HOME/bin	</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk </span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line"># 设置生效</span><br><span class="line">source /etc/profile</span><br><span class="line"># 设置Hadoop的JAVA_HOME</span><br><span class="line">vi etc/hadoop/hadoop-env.sh</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.91-2.6.2.3.el7.x86_64</span><br></pre></td></tr></table></figure></p>
-<h1 id="Hadoop配置"><a href="#Hadoop配置" class="headerlink" title="Hadoop配置"></a>Hadoop配置</h1><h2 id="需要配置的文件"><a href="#需要配置的文件" class="headerlink" title="需要配置的文件"></a>需要配置的文件</h2><ul>
-<li>hadoop/etc/hadoop/hadoop-env.sh </li>
-<li>hadoop/etc/hadoop/yarn-env.sh </li>
-<li>hadoop/etc/hadoop/core-site.xml </li>
-<li>hadoop/etc/hadoop/hdfs-site.xml </li>
-<li>hadoop/etc/hadoop/mapred-site.xml </li>
-<li>hadoop/etc/hadoop/yarn-site.xml</li>
-</ul>
-<h2 id="core-site-xml配置"><a href="#core-site-xml配置" class="headerlink" title="core-site.xml配置"></a>core-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;name&gt;fs.default.name&lt;/name&gt;</span><br><span class="line">&lt;value&gt;hdfs://10.1.1.35:9000&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="hdfs-site-xml配置"><a href="#hdfs-site-xml配置" class="headerlink" title="hdfs-site.xml配置"></a>hdfs-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:50070&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="mapred-site-xml配置"><a href="#mapred-site-xml配置" class="headerlink" title="mapred-site.xml配置"></a>mapred-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.job.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50030&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">  &lt;name&gt;mapred.task.tracker.http.address&lt;/name&gt;</span><br><span class="line">  &lt;value&gt;10.1.1.35:50060&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="hadoop-env-sh配置"><a href="#hadoop-env-sh配置" class="headerlink" title="hadoop-env.sh配置"></a>hadoop-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
-<h2 id="yarn-site-xml配置"><a href="#yarn-site-xml配置" class="headerlink" title="yarn-site.xml配置"></a>yarn-site.xml配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;yarn.resourcemanager.webapp.address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;10.1.1.35:8099&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;这个地址是mr管理界面的&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="yarn-env-sh配置"><a href="#yarn-env-sh配置" class="headerlink" title="yarn-env.sh配置"></a>yarn-env.sh配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改文件，在末尾添加如下代码。</span><br><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64</span><br></pre></td></tr></table></figure>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="格式换文件系统"><a href="#格式换文件系统" class="headerlink" title="格式换文件系统"></a>格式换文件系统</h2><p>hdfs namenode -format</p>
-<h2 id="启动节点"><a href="#启动节点" class="headerlink" title="启动节点"></a>启动节点</h2><p>sbin/start-dfs.sh</p>
-<h2 id="hadoop文件管理"><a href="#hadoop文件管理" class="headerlink" title="hadoop文件管理"></a>hadoop文件管理</h2><p><img src="/2019/05/23/Hadoop部署之一/3.png" alt="hadoop资源管理"></p>
-<ul>
-<li>浏览器打开 <a href="http://10.1.1.35:50070/" target="_blank" rel="noopener">http://10.1.1.35:50070/</a></li>
-</ul>
-<h2 id="hadoop-资源管理"><a href="#hadoop-资源管理" class="headerlink" title="hadoop 资源管理"></a>hadoop 资源管理</h2><p><img src="/2019/05/23/Hadoop部署之一/4.png" alt="hadoop资源管理"></p>
-<ul>
-<li>浏览器打开 <a href="http://10.1.1.35:8099/cluster" target="_blank" rel="noopener">http://10.1.1.35:8099/cluster</a></li>
-</ul>
-<h2 id="文件测试-文件wordcount"><a href="#文件测试-文件wordcount" class="headerlink" title="文件测试+文件wordcount"></a>文件测试+文件wordcount</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 上传</span><br><span class="line">hadoop fs -put /home/wwwlogs/access.log hdfs://10.1.1.35:9000/</span><br><span class="line"># 删除 </span><br><span class="line">hadoop  fs  -rm  hdfs://localhost:9000/access.log</span><br><span class="line"># 计数测试</span><br><span class="line">hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.0.jar wordcount /home/wwwlogs/access.log /myorder/</span><br><span class="line"># 结果检查</span><br><span class="line">hadoop fs -ls /myorder</span><br><span class="line">hadoop fs -cat /myorder/part-r-00000</span><br><span class="line"># 结果</span><br><span class="line">[30/Apr/2019:13:33:47   45</span><br><span class="line">[30/Apr/2019:13:33:48   3</span><br><span class="line">[30/Apr/2019:13:34:18   47</span><br><span class="line">[30/Apr/2019:13:34:27   4</span><br><span class="line">[30/Apr/2019:13:34:28   37</span><br></pre></td></tr></table></figure>
+        <p><style>td{background-color:#CC6600;}</style><br>在Read Committed隔离级别下，一个事务可能会遇到不可重复读（Non Repeatable Read）的问题。<br><a id="more"></a><br>不可重复读是指，在一个事务内，多次读同一数据，在这个事务还没有结束时，如果另一个事务恰好修改了这个数据，那么，在第一个事务中，两次读取的数据就可能不一致。</p>
+<p>我们仍然先准备好students表的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from students;</span><br><span class="line">+----+-------+</span><br><span class="line">| id | name  |</span><br><span class="line">+----+-------+</span><br><span class="line">|  1 | Alice |</span><br><span class="line">+----+-------+</span><br><span class="line">1 row in set (0.00 sec)</span><br></pre></td></tr></table></figure></p>
+<p>然后，分别开启两个MySQL客户端连接，按顺序依次执行事务A和事务B：</p>
+<table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>事务A</th>
+<th>事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SET TRANSACTION ISOLATION LEVEL READ COMMITTED;</td>
+<td>SET TRANSACTION ISOLATION LEVEL READ COMMITTED;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>BEGIN;</td>
+<td>BEGIN;</td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td>SELECT * FROM students WHERE id = 1;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>UPDATE students SET name = ‘Bob’ WHERE id = 1;</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>COMMIT;</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td></td>
+<td>SELECT * FROM students WHERE id = 1;</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>COMMIT;</td>
+</tr>
+</tbody>
+</table>
+<p>当事务B第一次执行第3步的查询时，得到的结果是Alice，随后，由于事务A在第4步更新了这条记录并提交，所以，事务B在第6步再次执行同样的查询时，得到的结果就变成了Bob，因此，在Read Committed隔离级别下，事务不可重复读同一条记录，因为很可能读到的结果不一致。</p>
+
       
       
         <div class="page-reward">
@@ -366,13 +381,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/23/Hadoop部署之一/">Hadoop部署之一</a></p>
+        <p><span>本文标题:</span><a href="/2021/02/23/事务之Read Committed/">事物之Read Committed</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 莫等闲 的个人博客">莫等闲</a></p>
-        <p><span>发布时间:</span>2019年05月23日 - 09时20分</p>
-        <p><span>最后更新:</span>2019年05月23日 - 10时33分</p>
+        <p><span>发布时间:</span>2021年02月23日 - 20时22分</p>
+        <p><span>最后更新:</span>2021年02月23日 - 20时52分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/23/Hadoop部署之一/" title="Hadoop部署之一">https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2019/05/23/Hadoop部署之一/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2021/02/23/事务之Read Committed/" title="事物之Read Committed">https://xhyangdali.github.io/2021/02/23/事务之Read Committed/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://xhyangdali.github.io/2021/02/23/事务之Read Committed/　　作者: 莫等闲" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -385,18 +400,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/23/Hive安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hive安装与配置
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/21/日志分析系统(flume)之数据加密/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">日志分析系统(flume)之数据加密</div>
+    <a href="/2021/02/23/事务之Read Uncommitted/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事务之Read Uncommitted</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -407,7 +413,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HDFS框架"><span class="toc-number">1.</span> <span class="toc-text">HDFS框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MapReduce架构"><span class="toc-number">2.</span> <span class="toc-text">MapReduce架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop下载安装"><span class="toc-number">3.</span> <span class="toc-text">Hadoop下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop下载"><span class="toc-number">3.1.</span> <span class="toc-text">Hadoop下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop安装"><span class="toc-number">3.2.</span> <span class="toc-text">Hadoop安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量设置"><span class="toc-number">3.3.</span> <span class="toc-text">环境变量设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop配置"><span class="toc-number">4.</span> <span class="toc-text">Hadoop配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要配置的文件"><span class="toc-number">4.1.</span> <span class="toc-text">需要配置的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#core-site-xml配置"><span class="toc-number">4.2.</span> <span class="toc-text">core-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hdfs-site-xml配置"><span class="toc-number">4.3.</span> <span class="toc-text">hdfs-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mapred-site-xml配置"><span class="toc-number">4.4.</span> <span class="toc-text">mapred-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-env-sh配置"><span class="toc-number">4.5.</span> <span class="toc-text">hadoop-env.sh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-site-xml配置"><span class="toc-number">4.6.</span> <span class="toc-text">yarn-site.xml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn-env-sh配置"><span class="toc-number">4.7.</span> <span class="toc-text">yarn-env.sh配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试"><span class="toc-number">5.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#格式换文件系统"><span class="toc-number">5.1.</span> <span class="toc-text">格式换文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动节点"><span class="toc-number">5.2.</span> <span class="toc-text">启动节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop文件管理"><span class="toc-number">5.3.</span> <span class="toc-text">hadoop文件管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop-资源管理"><span class="toc-number">5.4.</span> <span class="toc-text">hadoop 资源管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件测试-文件wordcount"><span class="toc-number">5.5.</span> <span class="toc-text">文件测试+文件wordcount</span></a></li></ol></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -473,13 +479,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/23/Hive安装与配置/" title="上一篇: Hive安装与配置">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/21/日志分析系统(flume)之数据加密/" title="下一篇: 日志分析系统(flume)之数据加密">
+            <a href="/2021/02/23/事务之Read Uncommitted/" title="下一篇: 事务之Read Uncommitted">
                 <i class="fa fa-angle-right"></i>
             </a>
         
